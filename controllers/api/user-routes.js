@@ -1,5 +1,4 @@
 const router = require('express').Router();
-
 const  {User}  = require('../../models');
 
 // ---------------------at api/users----------------------------
