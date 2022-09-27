@@ -1,0 +1,3 @@
+DROP DATABASE IF EXISTS mythic_db;
+
+CREATE DATABASE mythic_db;
