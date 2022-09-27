@@ -5,6 +5,7 @@ const session = require('express-session');
 const exphbs = require('express-handlebars');
 const sequelize = require('./config/connection');
 const helpers = require('./utils/helpers');
+const _ = require('lodash');
 
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
