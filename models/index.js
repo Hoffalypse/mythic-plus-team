@@ -1,6 +1,4 @@
-console.log("weeeeeeeeeeeee");
 const User = require('./user');
-console.log("weeeeeeeeeeeee");
 const Character = require('./character');
 
 
