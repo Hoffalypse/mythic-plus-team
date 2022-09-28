@@ -1,3 +1,7 @@
 .long{
     max-width: 200px;
 }
+.btn-color{
+    color: rebeccapurple;
+    background-color: rgb(240, 158, 158);
+}

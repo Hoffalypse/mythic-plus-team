@@ -35,11 +35,11 @@
         <br><br>
       </div>
      </form>  
-     {{#if reviews}}
+     {{#if characters}}
 <section>
   <div >
     {{#each characters as |character|}}
-    <button class="btn btn-primary" type="button"><a href="/teams/{{id}}">{{name}}</a></button>
+    <button class="btn btn-color" type="button"><a href="/teams/{{id}}">{{name}}</a></button>
       <br>
     {{/each}}
   </div>
