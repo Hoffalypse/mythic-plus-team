@@ -27,8 +27,20 @@ router.get('/', async (req, res) => {
   });
 
   router.get('/character', (req, res) => {
- 
-    res.render('character',{loggedIn:true});
+    Character.findAll({
+      where: {
+          user_id: req.session.user_id
+      },
+      attributes: [
+        'id',
+        'name',
+    ],
+    })
+    .then(characterData => {
+      console.log(characterData);
+    const characters = characterData.map(post => post.get({ plain: true }));
+    res.render('character',{characters, loggedIn:true});
+   })
   });
   
   // signup screen
