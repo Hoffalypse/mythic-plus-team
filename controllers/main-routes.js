@@ -25,6 +25,11 @@ router.get('/', async (req, res) => {
  
     res.render('teams');
   });
+
+  router.get('/character', (req, res) => {
+ 
+    res.render('character');
+  });
   // signup screen
  router.get('/signup', (req, res) => {
  
