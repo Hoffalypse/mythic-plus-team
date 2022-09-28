@@ -13,20 +13,21 @@ const newReviewHandler = async (event) => {
         return response.json();
       })
       .then(function (data) {
-        console.log(data.class)
-  
+        
+        console.log(data);
+
+
         })
       }
       else{
           alert("Please enter all fields")
       }
       
-     console.log(name);
+   
     const response = await fetch(`/api/characters`, {
     method: 'POST',
-    body: JSON.stringify({ name }),
+    body: JSON.stringify({ name, thumb }),
     headers: {'Content-Type': 'application/json'},
-    
   });
 
       if (response.ok) {
