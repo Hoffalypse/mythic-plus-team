@@ -26,7 +26,6 @@ router.post('/', async (req, res) => {
     res.status(420).json(err);
   }
 });
-<<<<<<< HEAD
 router.post('/',  async (req, res) => {
     try {
    
@@ -47,7 +46,5 @@ router.post('/',  async (req, res) => {
       res.status(420).json(err);
     }
   });
-=======
->>>>>>> b6210d821799ae70c8ed22236b08bc2149a7d1b4
 
 module.exports = router;
