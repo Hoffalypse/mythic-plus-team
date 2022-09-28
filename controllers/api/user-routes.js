@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const  {User}  = require('../../models');
+const  {User, Character}  = require('../../models');
 
 // ---------------------at api/users----------------------------
 
@@ -11,6 +11,7 @@ router.post('/login', async (req, res) => {
           email: req.body.email, 
         },
       });
+      console.log(dbUserData);
       if (!dbUserData) {
         res
           .status(400)
@@ -62,5 +63,15 @@ router.post('/signup', async (req, res) => {
     }
   });
 
-
+  //Find all users
+  router.get('/',  (req, res) => {
+    User.findAll({
+            include: {model: Character}
+        })
+        .then(dbUserData => res.json(dbUserData))
+        .catch(err => {
+            
+            res.status(501).json(err);
+        });
+  });
 module.exports = router;

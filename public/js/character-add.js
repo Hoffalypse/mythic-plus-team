@@ -20,22 +20,23 @@ const newReviewHandler = async (event) => {
       else{
           alert("Please enter all fields")
       }
-  
-     
-    const response = await fetch(`/api/reviews`, {
+      
+     console.log(name);
+    const response = await fetch(`/api/characters`, {
     method: 'POST',
-    body: JSON.stringify({ name, content }),
+    body: JSON.stringify({ name }),
     headers: {'Content-Type': 'application/json'},
+    
   });
-      // if (response.ok) {
+
+      if (response.ok) {
         
-      //   document.location.replace('/dashboard');
-      // } else {
-      //   alert('screw this I quit');
-      // }
-  //   }
-  // };
-}
+        document.location.reload();
+      } else {
+        alert('screw this I quit');
+      }
+    }
+    
   document
   .querySelector('.new-character')
   .addEventListener('submit', newReviewHandler);

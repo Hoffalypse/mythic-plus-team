@@ -6,7 +6,7 @@ const withAuth = require("../utils/auth");
 router.get('/', async (req, res) => {
     try {
    
-      res.render('landing');
+      res.render('landing',{loggedIn:req.session.loggedIn});
       }
        catch (err) {
           res.status(500).json("show this");
@@ -28,11 +28,22 @@ router.get('/', async (req, res) => {
 
   router.get('/character', (req, res) => {
  
-    res.render('character');
+    res.render('character',{loggedIn:true});
   });
+  
   // signup screen
  router.get('/signup', (req, res) => {
  
     res.render('signup');
+  });
+
+  router.post('/logout', (req, res) => {
+    if (req.session.loggedIn) {
+      req.session.destroy(() => {
+        res.status(204).end();
+      });
+    } else {
+      res.status(404).end();
+    }
   });
 module.exports = router;
