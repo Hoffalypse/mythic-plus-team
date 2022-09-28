@@ -20,6 +20,11 @@ router.get('/', async (req, res) => {
  
     res.render('login');
   });
+
+  router.get('/team', (req, res) => {
+ 
+    res.render('team');
+  });
   // signup screen
  router.get('/signup', (req, res) => {
  
