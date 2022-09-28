@@ -17,10 +17,6 @@ Character.init(
         type: DataTypes.STRING,
         allowNull: false,
       },
-    type: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
     user_id: {
       type: DataTypes.INTEGER,
       references: {

@@ -1,13 +1,13 @@
 <div class="login-card box">
-    <h2 class="page-title">Search</h2>
+    <h2 class="page-title">Add Your Character</h2>
     <form class="form new-character">
       <div class="form-group center1">
-        <label for="name-input">Search Your Charcter:</label>
+        <label for="name-input">Your Character's name:</label>
         <input class="form-input" type="text" id="name-input" />
       </div>
      
     <select class="form-select form-select-lg mb-3 long"id="region-input" aria-label=".form-select-lg example">
-        <option selected>Select Region</option>
+        <option selected>Your Region</option>
         <option value="us">Americas</option>
         <option value="eu">Europe</option>
         <option value="cn">China</option>
@@ -15,7 +15,7 @@
         <option value="tw">Taiwan</option>
     </select>
     <select class="form-select form-select-lg mb-3 long"  id="realm-input" aria-label=".form-select-lg example">
-            <option selected>Select Realm</option>
+            <option selected>Your Realm</option>
             <option value="Area 52">Area 52</option>
             <option value="Illidan">Illidan</option>
             <option value="Draenor">Draenor</option>
@@ -31,9 +31,19 @@
             <option value="Taerar">Taerar</option>
     </select>
       <div class="form-group center1">
-        <button class="btn btn-primary new-character" type="submit">Search</button>
+        <button class="btn btn-primary new-character" type="submit">Add Character</button>
         <br><br>
       </div>
      </form>  
+     {{#if reviews}}
+<section>
+  <div >
+    {{#each characters as |character|}}
+    <button class="btn btn-primary" type="button"><a href="/teams/{{id}}">{{name}}</a></button>
+      <br>
+    {{/each}}
+  </div>
+</section>
+{{/if}}
 
 <script src="js/character-add.js"></script>
