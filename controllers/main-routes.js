@@ -23,7 +23,12 @@ router.get('/', async (req, res) => {
 
   router.get('/team', (req, res) => {
  
-    res.render('team');
+    res.render('teams');
+  });
+
+  router.get('/character', (req, res) => {
+ 
+    res.render('character');
   });
   // signup screen
  router.get('/signup', (req, res) => {
