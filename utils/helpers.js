@@ -2,13 +2,13 @@ const roleIcon = (role) => {
   let roleImg = '';
   switch (role) {
     case 'tank':
-      roleImg = './assets/images/tank.png';
+      roleImg = './images/tank.png';
       break;
     case 'dps':
-      roleImg = './assets/images/dps.png';
+      roleImg = './images/dps.png';
       break;
     case 'healer':
-      roleImg = './assets/images/healer.png';
+      roleImg = './images/healer.png';
     default:
       break;
   }
