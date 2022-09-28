@@ -26,7 +26,7 @@ router.get('/', async (req, res) => {
     res.render('teams');
   });
 
-  router.get('/character', (req, res) => {
+  router.get('/character', withAuth,(req, res) => {
     Character.findAll({
       where: {
           user_id: req.session.user_id

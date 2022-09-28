@@ -12,27 +12,33 @@ const newCharacterHandler = async (event) => {
       .then(function (response) {
         return response.json();
       })
-      .then(function (data) {
-        console.log(data.class);
-      });
-  } else {
-    alert('Please enter all fields');
-  }
+      .then(function  (data) {
+         let role = data.active_spec_role;
+         let avatar = data.thumbnail_url;
+         let char_class = data.class;
+         let spec = data.active_spec_name;
+         let ilvl = data.gear.item_level_equipped;
+         let current_m_score = data.mythic_plus_scores_by_season[0].scores.all; 
+         console.log(role, avatar, char_class, spec, ilvl, current_m_score);
 
-  console.log(name);
-  const response = await fetch(`/api/characters`, {
-    method: 'POST',
-    body: JSON.stringify({ name }),
-    headers: { 'Content-Type': 'application/json' },
-  });
-
-  if (response.ok) {
-    document.location.reload();
-  } else {
-    alert('screw this I quit');
-  }
-};
-
-document
+          fetch(`/api/characters`, {
+          method: 'POST',
+          body: JSON.stringify({ name, role, avatar, char_class, spec, ilvl, current_m_score }),
+          headers: {'Content-Type': 'application/json'},
+        });
+          
+        })
+        .then(function(){
+          
+          document.location.reload();
+        })
+      }
+      else{
+          alert("Please enter all fields")
+      }
+      
+    }
+    
+  document
   .querySelector('.new-character')
   .addEventListener('submit', newCharacterHandler);

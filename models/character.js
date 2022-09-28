@@ -16,18 +16,14 @@ Character.init(
       allowNull: false,
     },
     avatar: {
-      type: DataTypes.BLOB,
+      type: DataTypes.STRING,
       allowNull: false,
     },
     role: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    role_icon: {
-      type: DataTypes.BLOB,
-      allowNull: false,
-    },
-    class: {
+    char_class: {
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -46,6 +42,7 @@ Character.init(
     note: {
       type: DataTypes.TEXT,
       allowNull: true,
+      defaultValue: ""
     },
 
     user_id: {
