@@ -13,19 +13,7 @@ router.get('/', (req, res) => {
       res.status(500).json(err);
     });
 });
-router.post('/', async (req, res) => {
-  try {
-    console.log(req.body.name, req.session.user_id);
-    const newCharacter = await Character.create({
-      name: req.body.name,
-      user_id: req.session.user_id,
-    });
-    console.log('made it coach');
-    res.status(200).json(newCharacter);
-  } catch (err) {
-    res.status(420).json(err);
-  }
-});
+
 router.post('/',  async (req, res) => {
     try {
    
