@@ -12,7 +12,9 @@ body {
 }
 .btn-color{
     color: rebeccapurple;
-    background-color: rgb(240, 158, 158);
+    
+    background-color: rebeccapurple;
+    box-shadow: 5px 10px 18px greenyellow;
 }
 .placeholder{
     max-width: 100px;
@@ -58,3 +60,5 @@ body {
 .center{
     text-align: center;
 }
+
+/* styling for teammates page */
