@@ -1,65 +1,73 @@
 *,
 body {
-    background-color: black;
-    color: white;
+  background-color: black;
+  color: white;
 }
-.pad{
-    margin-top: 20px;
+.pad {
+  margin-top: 20px;
 }
-.long{
-    max-width: 200px;
-    min-height: 50px;
+.long {
+  max-width: 200px;
+  min-height: 50px;
 }
-.btn-color{
-    color: rebeccapurple;
-    
-    background-color: rebeccapurple;
-    box-shadow: 5px 10px 18px greenyellow;
-}
-.placeholder{
-    max-width: 100px;
-}
+.btn-color {
+  color: rebeccapurple;
 
+  background-color: rebeccapurple;
+  box-shadow: 5px 10px 18px greenyellow;
+}
+.placeholder {
+  max-width: 100px;
+}
 
 /* style for landing page */
 
 .welcome {
-    color: orangered;
-    text-align: left;
-    font-size: 75px;
+  color: orangered;
+  text-align: left;
+  font-size: 75px;
 }
 
 #big-logo-img {
-    width: 125px;
-    height: 100px;  
+  width: 125px;
+  height: 100px;
 }
 
-.faction{
-    box-shadow: 3px 8px 18px blue, 10px 20px 36px maroon; 
+.faction {
+  box-shadow: 3px 8px 18px blue, 10px 20px 36px maroon;
 }
 
 .guldan {
-    box-shadow: 5px 10px 18px greenyellow;
-    padding: 10px;
+  box-shadow: 5px 10px 18px greenyellow;
+  padding: 10px;
 }
 
 #guldan {
-    margin-left: 68px;
-    margin-top: 25px;
-    height: 700px;
-    width: 500px;
+  margin-left: 68px;
+  margin-top: 25px;
+  height: 700px;
+  width: 500px;
 }
 
 .support {
-    width: 1900px;
-    background-color: black;
-    margin: auto;
+  width: 1900px;
+  background-color: black;
+  margin: auto;
 }
-.length{
-    max-width: 225px;   
+.length {
+  max-width: 225px;
 }
-.center{
-    text-align: center;
+.center {
+  text-align: center;
+}
+
+/* Styling for character page */
+.char-del {
+  padding: 0;
+  height: 25px;
+  width: 25px;
+  box-shadow: 5px 10px 18px greenyellow;
+  position: absolute;
 }
 
 /* styling for teammates page */

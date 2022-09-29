@@ -403,10 +403,13 @@
   <section>
     <div>
       {{#each characters as |character|}}
-        <div></div>
-      <button class="btn btn-color char" type="button" data-id={{id}}><a href="/teams/{{id}}"> {{name}}</a></button>
+      <div>
+        <button class="btn btn-color" type="button"><a href="/teams/{{id}}" style="background-color: transparent;">
+            {{name}}</a></button><button class="btn btn-danger char-del"><i class="bi bi-eraser"
+            style="background-color: transparent;" id="char-del" data-id={{id}}></i></button>
+      </div>
       <br><br>
-     
+
       {{/each}}
     </div>
   </section>
