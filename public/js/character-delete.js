@@ -14,6 +14,7 @@ const deleteCharacterHandler = async (event) => {
   }
 };
 
-document
-  .querySelector('.char')
-  .addEventListener('dblclick', deleteCharacterHandler);
+charArr = document.querySelectorAll('#char-del');
+charArr.forEach((button) => {
+  button.addEventListener('click', deleteCharacterHandler);
+});
