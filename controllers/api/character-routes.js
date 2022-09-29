@@ -1,12 +1,13 @@
 const router = require('express').Router();
 const { User, Character, Teammates } = require('../../models');
 const withAuth = require('../../utils/auth');
+const { capitalizeFirstLetter } = require('../../utils/helpers');
 
 //--------------at api/characters--------------------------
 
 router.get('/', (req, res) => {
   Character.findAll({
-    include: {model: Teammates}
+    include: { model: Teammates },
   })
     .then((dbUserData) => res.json(dbUserData))
     .catch((err) => {
@@ -17,7 +18,7 @@ router.get('/', (req, res) => {
 router.post('/', async (req, res) => {
   try {
     const newCharacter = await Character.create({
-      name: req.body.name,
+      name: capitalizeFirstLetter(req.body.name),
       role: req.body.role,
       avatar: req.body.avatar,
       char_class: req.body.char_class,
@@ -28,7 +29,7 @@ router.post('/', async (req, res) => {
       realm: req.body.realm,
       user_id: req.session.user_id,
     });
-    
+
     res.status(200).json(newCharacter);
   } catch (err) {
     res.status(420).json(err);
