@@ -35,6 +35,13 @@
             <a href="/login"class="nav-link">Login</a>
           {{/if}}
         </li>
+        <li class="nav-item">
+          {{#if loggedIn}}
+          
+          {{else}}
+            <a href="/signup"class="nav-link">Signup</a>
+          {{/if}}
+        </li>
       </ul>
       <form class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
