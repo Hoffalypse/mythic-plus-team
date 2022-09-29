@@ -39,6 +39,14 @@ Character.init(
       type: DataTypes.INTEGER,
       allowNull: false,
     },
+    region:{
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    realm:{
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     note: {
       type: DataTypes.TEXT,
       allowNull: true,

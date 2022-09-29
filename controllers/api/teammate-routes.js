@@ -13,5 +13,19 @@ router.get('/', (req, res) => {
         res.status(500).json(err);
       });
   });
-
+  router.get('/:id',  async (req, res) => {
+    try {
+      
+      const editTeam = await Character.findByPk(req.params.id, {
+        include: [{model: Teammates}],
+      });
+      const team = editTeam.get({ plain: true });
+     
+      res.render('teams', {team, loggedIn: true});
+      }
+       catch (err) {
+          res.status(500).json("review update screen error");
+        }
+      }
+  );
   module.exports = router;

@@ -24,6 +24,8 @@ router.post('/', async (req, res) => {
       spec: req.body.spec,
       ilvl: req.body.ilvl,
       current_m_score: req.body.current_m_score,
+      region: req.body.region,
+      realm: req.body.realm,
       user_id: req.session.user_id,
     });
     console.log('made it coach');

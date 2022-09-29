@@ -31,6 +31,8 @@ const newCharacterHandler = async (event) => {
             spec,
             ilvl,
             current_m_score,
+            region,
+            realm,
           }),
           headers: { 'Content-Type': 'application/json' },
         }).then(function () {
