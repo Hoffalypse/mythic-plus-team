@@ -15,6 +15,12 @@ const roleIcon = (role) => {
   return roleImg;
 };
 
+// program to convert first letter of a string to uppercase
+const capitalizeFirstLetter = (str) => {
+  const capitalized = str.replace(/^./, str[0].toUpperCase());
+  return capitalized;
+};
+
 console.log(roleIcon('healer'));
 
 module.exports = {
@@ -24,4 +30,5 @@ module.exports = {
     ).getDate()}/${new Date(date).getFullYear()}`;
   },
   roleIcon,
+  capitalizeFirstLetter,
 };
