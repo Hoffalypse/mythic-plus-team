@@ -403,7 +403,8 @@
   <section>
     <div>
       {{#each characters as |character|}}
-      <button class="btn btn-color" type="button"><a href="/teams/{{id}}">{{name}}</a></button>
+
+      <button class="btn btn-color char" type="button" data-id={{id}}><a href="/teams/{{id}}">{{name}}</a></button>
       <br>
       {{/each}}
     </div>
@@ -411,3 +412,4 @@
   {{/if}}
 
   <script src="js/character-add.js"></script>
+  <script src="js/character-delete.js"></script>
