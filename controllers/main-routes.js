@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const { User, Character } = require('../models');
+const { User, Character, Teammates } = require('../models');
 const withAuth = require("../utils/auth");
 
 router.get('/', async (req, res) => {
@@ -21,11 +21,25 @@ router.get('/', async (req, res) => {
     res.render('login');
   });
 
-  router.get('/team', (req, res) => {
- 
-    res.render('teams');
-  });
 
+  router.get('/teams/:id',  async (req, res) => {
+    try {
+      
+      const editTeam = await Character.findByPk(req.params.id, {
+        include: {model: Teammates},
+      });
+      const team = editTeam.get({ plain: true });
+      // const team = editTeam.map((one) =>
+      // one.get({ plain: true })
+      // );
+      console.log(team);
+      res.render('teams', {team, loggedIn: true});
+      }
+       catch (err) {
+          res.status(500).json("review update screen error");
+        }
+      }
+  );
   router.get('/character', withAuth,(req, res) => {
     Character.findAll({
       where: {

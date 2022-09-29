@@ -6,7 +6,7 @@ const withAuth = require('../../utils/auth');
 
 router.get('/', (req, res) => {
   Character.findAll({
-    // include: {model: Teammates}
+    include: {model: Teammates}
   })
     .then((dbUserData) => res.json(dbUserData))
     .catch((err) => {
@@ -28,7 +28,7 @@ router.post('/', async (req, res) => {
       realm: req.body.realm,
       user_id: req.session.user_id,
     });
-    console.log('made it coach');
+    
     res.status(200).json(newCharacter);
   } catch (err) {
     res.status(420).json(err);
@@ -42,6 +42,7 @@ router.delete('/:id', withAuth, async (req, res) => {
         id: req.params.id,
         user_id: req.session.user_id,
       },
+      // include: [{model: Teammates}]
     });
 
     if (!data) {

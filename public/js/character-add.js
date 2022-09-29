@@ -36,7 +36,7 @@ const newCharacterHandler = async (event) => {
           }),
           headers: { 'Content-Type': 'application/json' },
         }).then(function () {
-          document.location.replace('/character');
+          document.location.reload();
         });
       });
   } else {

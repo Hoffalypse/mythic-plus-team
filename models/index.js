@@ -16,13 +16,13 @@ Character.belongsTo(User, {
   });
 
   Teammates.belongsTo(Character, {
-    foreignKey: 'charcter_id',
+    foreignKey: 'character_id',
     onDelete:"cascade"
     
   });
 
   Character.hasMany(Teammates, {
-    foreignKey: 'charcter_id',
+    foreignKey: 'character_id',
     onDelete:"cascade"
   });
 
