@@ -26,33 +26,12 @@
     </div>
   </div> --}}
   <h1 class="center">{{team.name}}'s Team</h1>
-<div class="login-card box">
-  <h2 class="page-title">Add Teammate</h2>
-  <form class="form new-teammate">
-    <div class="form-group center1">
-      <label for="name-input">Enter Teammates's name:</label><br>
-      <input class="form-input" type="text" id="name-input" />
-    </div>
-
-    <select class="form-select form-select-lg mb-3 long" id="region-input" aria-label=".form-select-lg example">
-      <option selected>Their Region</option>
-      <option value="us">Americas</option>
-      <option value="eu">Europe</option>
-      <option value="kr">Korea</option>
-      <option value="tw">Taiwan</option>
-    </select>
+  <div class="container">
+    <div class="row">
+      <div class="col-10">
+    <section>
     
-    <input class="form-control long" list="datalistOptions" id="realm-input" placeholder="Their Realm">
-     <div class="form-group center1">
-      <button class="btn btn-primary new-teammate" type="submit">Add Teammate</button>
-      <br><br>
-    </div>
-  </form>
-    {{!-- {{#if teams}} --}}
-  <section>
-    <div>
       {{#each team.teammates }}
-
      <div class="column mx-auto">
     <div class="healer">
       <img src="{{avatar}}" class="card-img-top placeholder" alt="placeholder">
@@ -69,8 +48,38 @@
     </div>
   </div>
       {{/each}}
-    </div>
+    
   </section>
+</div>
+       
+          <div class="login-card box col-2">
+            <h4 class="page-title">Add Teammate</h4>
+            <form class="form new-teammate">
+              <div class="form-group center1">
+                <label for="name-input">Teammates's name:</label><br>
+                <input class="form-input" type="text" id="name-input" />
+              </div>
+
+        <select class="form-select form-select-lg mb-3 long" id="region-input" aria-label=".form-select-lg example">
+          <option selected>Their Region</option>
+          <option value="us">Americas</option>
+          <option value="eu">Europe</option>
+          <option value="kr">Korea</option>
+          <option value="tw">Taiwan</option>
+        </select>
+    
+        <input class="form-control long" list="datalistOptions" id="realm-input" placeholder="Their Realm">
+        <div class="form-group center1">
+          <button class="btn btn-primary new-teammate" type="submit">Add Teammate</button>
+          <br><br>
+        </div>
+       </div>
+      </div> 
+    </div>
+  </form>
+
+    {{!-- {{#if teams}} --}}
+
   {{!-- {{/if}} --}}
 
   <script src="/js/teammate-add.js"></script>
