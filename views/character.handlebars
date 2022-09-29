@@ -2,7 +2,7 @@
   <h2 class="page-title">Add Your Character</h2>
   <form class="form new-character">
     <div class="form-group center1">
-      <label for="name-input">Your Character's name:</label>
+      <label for="name-input">Enter Character's name:</label><br>
       <input class="form-input" type="text" id="name-input" />
     </div>
 
@@ -13,8 +13,8 @@
       <option value="kr">Korea</option>
       <option value="tw">Taiwan</option>
     </select>
-    <label for="realm-input" class="form-label">Realm</label>
-    <input class="form-control" list="datalistOptions" id="realm-input" placeholder="Type to search...">
+    {{!-- <label for="realm-input" class="form-label">Realm</label> --}}
+    <input class="form-control long" list="datalistOptions" id="realm-input" placeholder="Input Realm">
     <datalist id="datalistOptions">
       <option value="Azralon">
       <option value="Gallywix">
