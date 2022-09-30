@@ -25,17 +25,23 @@ body {
   height: 80px;
 }
 
+footer {
+  background-color: transparent;
+  position:sticky;
+}
+
 /* style for landing page */
 
 .welcome {
   color: orangered;
   text-align: left;
   font-size: 75px;
+  margin: 50px 0 0 0;
 }
 
 #big-logo-img {
-  width: 125px;
-  height: 100px;
+  width: 200px;
+  height: 200px;
 }
 
 .faction {
@@ -59,6 +65,22 @@ body {
   background-color: black;
   margin: auto;
 }
+
+#message {
+  height: 100px;
+  width: 600px;
+}
+
+#submit {
+  background-color: white;
+  color: orangered;
+  font-weight: bolder;
+}
+
+#response {
+  font-size: 20px;
+}
+
 .length {
   max-width: 225px;
 }
@@ -76,3 +98,84 @@ body {
 }
 
 /* styling for teammates page */
+
+/* styling for login page */
+.extra {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('https://www.icy-veins.com/forums/uploads/monthly_2020_04/350764513_worldmapshadowlands.jpg.dc2e81a15d6ffccf20265dd70a9e8d30.jpg');
+  background-size: cover;
+}
+.sign {
+  color: white;
+  margin-left: 40px;
+}
+
+.sign:hover{
+  font-weight: bolder;
+ font-size: larger;
+}
+
+.sign::after, .sign:visited{
+  color:white;
+  text-decoration: underline;
+}
+
+.submit{
+  background-color: maroon;
+}
+.submit:hover {
+  background-color:maroon;
+  opacity: 0.5;
+}
+
+.subs{
+  margin-left: 50px;
+  border: 0px;
+}
+
+.formed{
+  margin: 45% 45%;
+  background-color: transparent;
+}
+
+.transparent{
+  background-color: transparent;
+}
+
+/* signup page */
+.oribos {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('https://cdnb.artstation.com/p/assets/images/images/044/523/905/large/francesca-baerald-fbaerald-shadowlandsmap.jpg?1640259662');
+  background-size: cover;
+}
+
+.su{
+  color:maroon
+}
+
+.loginlink{
+  color: maroon
+}
+
+.loginlink:hover{
+  font-weight: bolder;
+  font-size: larger;
+}
+
+.loginlink::after, .loginlink:visited{
+  color: maroon;
+  text-decoration: underline;
+}
+
+.formatting{
+  margin-left: 40px;
+  border: 0px;
+}
