@@ -18,17 +18,11 @@ router.get('/', (req, res) => {
 
 router.get('/:id', withAuth, async (req, res) => {
   try {
-    const data = await Character.findByPk(req.params.id, {
-      include: [
-        {
-          model: User,
-        },
-      ],
-    });
-    const character = data.get({ plain: true });
-    res.status(200).json(character);
+    const charData = await Character.findByPk(req.params.id, {});
+    const char = charData.get({ plain: true });
+    console.log(char);
+    res.status(200).json(char);
   } catch (err) {
-    console.log(err);
     res.status(500).json(err);
   }
 });

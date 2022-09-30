@@ -1,19 +1,14 @@
 const displayCharacterHandler = async (event) => {
-  let charPick = true;
+  event.preventDefault();
   const id = event.target.attributes['data-id'].nodeValue;
   const response = await fetch(`/api/characters/${id}`, {
     method: 'GET',
-    headers: { 'content-type': 'application/json' },
+    headers: { 'Content-Type': 'application/json' },
   });
-
-  if (response.ok) {
-    return response, charPick;
-  } else {
-    alert('No Dice');
-  }
+  charData = response.json();
 };
 
 charArr = document.querySelectorAll('#char-pick');
-charArr.forEach((button) => {
-  button.addEventListener('click', displayCharacterHandler);
+charArr.forEach((char) => {
+  char.addEventListener('click', displayCharacterHandler);
 });

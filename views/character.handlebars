@@ -408,7 +408,7 @@
         {{#each characters as |character|}}
 
         <div class="name-container">
-          <button class="btn btn-secondary char-pick" type="button" data-id={{id}}>{{name}}</button>
+          <button class="btn btn-secondary char-pick" type="button" data-id={{id}} id="char-pick">{{name}}</button>
         </div>
         <div class="char-list">
           <button class="btn btn-success char-team" onclick="location.href='/teams/{{id}}';"><i
@@ -431,4 +431,4 @@
 
   <script src="js/character-add.js"></script>
   <script src="js/character-delete.js"></script>
-  <scirpt src="js/character-display.js"></scirpt>
+  <script src="js/character-display.js"></script>
