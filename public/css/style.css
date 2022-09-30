@@ -114,13 +114,25 @@ footer {
   margin-left: 40px;
 }
 
+.sign:hover{
+  font-weight: bolder;
+ font-size: larger;
+}
+
 .sign::after, .sign:visited{
   color:white;
   text-decoration: underline;
 }
 
-.subs{
+.submit{
   background-color: maroon;
+}
+.submit:hover {
+  background-color:maroon;
+  opacity: 0.5;
+}
+
+.subs{
   margin-left: 50px;
   border: 0px;
 }
@@ -151,6 +163,11 @@ footer {
 
 .loginlink{
   color: maroon
+}
+
+.loginlink:hover{
+  font-weight: bolder;
+  font-size: larger;
 }
 
 .loginlink::after, .loginlink:visited{
