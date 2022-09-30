@@ -86,9 +86,14 @@ footer {
 }
 .center {
   text-align: center;
+  margin: 75px 0 0 0;
 }
 
 /* Styling for character page */
+
+.box {
+  margin: 60px 0 0 25px;
+}
 .char-del {
   padding: 0;
   height: 25px;
@@ -98,6 +103,7 @@ footer {
 }
 
 /* styling for teammates page */
+
 
 /* styling for login page */
 .extra {

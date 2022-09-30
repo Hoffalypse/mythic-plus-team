@@ -415,5 +415,22 @@
   </section>
   {{/if}}
 </article>
+<!--This conatiner will contain character details after clicking character name-->
+<div class="character-details">
+<div class="card-body">
+              <h5 class="card-title">{{name}}</h5>
+              <h5 class="card-text">Role: {{role}} </h5>
+            </div>
+          </div>
+        </div>
+        <div class="column mx-auto">
+          <div class="team">
+            <h5 class="card-title">Class: {{char_class}}</h5>
+            <h5 class="card-text">Ilvl:{{ilvl}} </h5>
+          </div>
+          <button class="btn btn-danger char-del"><i class="bi bi-eraser" style="background-color: transparent;"
+              id="tmate-del" data-id={{id}}></i></button>
+        </div></div>
+
   <script src="js/character-add.js"></script>
   <script src="js/character-delete.js"></script>
