@@ -31,11 +31,12 @@ body {
   color: orangered;
   text-align: left;
   font-size: 75px;
+  margin: 50px 0 0 0;
 }
 
 #big-logo-img {
-  width: 125px;
-  height: 100px;
+  width: 200px;
+  height: 200px;
 }
 
 .faction {
@@ -59,6 +60,22 @@ body {
   background-color: black;
   margin: auto;
 }
+
+#message {
+  height: 100px;
+  width: 600px;
+}
+
+#submit {
+  background-color: white;
+  color: orangered;
+  font-weight: bolder;
+}
+
+#response {
+  font-size: 20px;
+}
+
 .length {
   max-width: 225px;
 }
