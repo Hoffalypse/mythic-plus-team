@@ -16,6 +16,23 @@ router.get('/', (req, res) => {
     });
 });
 
+router.get('/:id', withAuth, async (req, res) => {
+  try {
+    const data = await Character.findByPk(req.params.id, {
+      include: [
+        {
+          model: User,
+        },
+      ],
+    });
+    const character = data.get({ plain: true });
+    res.status(200).json(character);
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
 router.post('/', async (req, res) => {
   try {
     const response = await axios.get(
