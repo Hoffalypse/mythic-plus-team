@@ -93,3 +93,40 @@ body {
 }
 
 /* styling for teammates page */
+
+/* styling for login page */
+.extra {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('https://www.icy-veins.com/forums/uploads/monthly_2020_04/350764513_worldmapshadowlands.jpg.dc2e81a15d6ffccf20265dd70a9e8d30.jpg');
+  background-size: cover;
+}
+.sign {
+  color: white;
+  margin-left: 40px;
+}
+
+.sign::after, .sign:visited{
+  color:white;
+  text-decoration: underline;
+}
+
+.subs{
+  background-color: maroon;
+  border: 1px solid black;
+  margin-left: 50px;
+  border: 0px;
+}
+
+.formed{
+  margin: 45% 45%;
+  background-color: transparent;
+}
+
+.transparent{
+  background-color: transparent;
+}
+
