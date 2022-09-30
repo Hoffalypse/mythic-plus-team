@@ -123,16 +123,23 @@ footer {
   display: flex;
   justify-content: center;
 }
+.char-pick {
+  border: solid black 3px;
+  box-shadow: 5px 10px 18px greenyellow;
+}
+
 .char-team {
+  border: solid black 3px;
   padding: 0;
-  height: 25px;
-  width: 25px;
+  height: 28px;
+  width: 28px;
   box-shadow: 5px 10px 18px greenyellow;
 }
 .char-del {
+  border: solid black 3px;
   padding: 0;
-  height: 25px;
-  width: 25px;
+  height: 28px;
+  width: 28px;
   box-shadow: 5px 10px 18px greenyellow;
 }
 

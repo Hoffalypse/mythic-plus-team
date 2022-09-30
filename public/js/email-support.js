@@ -1,18 +1,18 @@
-var submitEl = document.querySelector("#submit");
-var nameInput = document.querySelector("#firstName");
-var emailInput = document.querySelector("#email");
-var submissionResponseEl = document.querySelector("#response");
+const submitEl = document.querySelector('#submit');
+const nameInput = document.querySelector('#firstName');
+const emailInput = document.querySelector('#email');
+const submissionResponseEl = document.querySelector('#response');
 
 function showResponse(event) {
   event.preventDefault();
   console.log(event);
-  var response =
-    "Thank you for your submission " +
+  let response =
+    'Thank you for your submission ' +
     nameInput.value +
-    "! We will reach out to you at " +
+    '! We will reach out to you at ' +
     emailInput.value +
-    ".";
+    '.';
   submissionResponseEl.textContent = response;
 }
 
-submitEl.addEventListener("click", showResponse);
+submitEl.addEventListener('click', showResponse);
