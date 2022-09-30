@@ -18,7 +18,7 @@ const newCharacterHandler = async (event) => {
     if (response.ok) {
       document.location.reload();
     } else {
-      alert('Fail');
+      alert('No Dice');
     }
   }
 };

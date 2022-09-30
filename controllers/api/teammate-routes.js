@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const { default: axios } = require('axios');
 const { User, Character, Teammates } = require('../../models');
 const withAuth = require('../../utils/auth');
 const { capitalizeFirstLetter } = require('../../utils/helpers');
@@ -12,16 +13,21 @@ router.get('/', (req, res) => {
       res.status(500).json(err);
     });
 });
+
 router.post('/', async (req, res) => {
   try {
+    const response = await axios.get(
+      `https://raider.io/api/v1/characters/profile?region=${req.body.region}&realm=${req.body.realm}&name=${req.body.name}&fields=gear%2Cguild%2Cmythic_plus_scores_by_season%3Acurrent`
+    );
+
     const newTeammate = await Teammates.create({
       name: capitalizeFirstLetter(req.body.name),
-      role: req.body.role,
-      avatar: req.body.avatar,
-      char_class: req.body.char_class,
-      spec: req.body.spec,
-      ilvl: req.body.ilvl,
-      current_m_score: req.body.current_m_score,
+      role: response.data.active_spec_role,
+      avatar: response.data.thumbnail_url,
+      char_class: response.data.class,
+      spec: response.data.active_spec_name,
+      ilvl: response.data.gear.item_level_equipped,
+      current_m_score: response.data.mythic_plus_scores_by_season[0].scores.all,
       region: req.body.region,
       realm: req.body.realm,
       character_id: req.body.character_id,
@@ -49,23 +55,23 @@ router.delete('/:id', withAuth, async (req, res) => {
   } catch (err) {
     res.status(500).json(err);
   }
-})
-  router.put('/', async (req, res) => {
-    try{
-    const noteData = await Teammates.update (
+});
+router.put('/', async (req, res) => {
+  try {
+    const noteData = await Teammates.update(
       {
-        note: req.body.note
+        note: req.body.note,
       },
       {
         where: {
-          id: req.body.id
+          id: req.body.id,
         },
-      })
-        res.json(noteData);
-      
-    }catch(err) {
-      res.status(500).json(err); 
-    };
- });
+      }
+    );
+    res.json(noteData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 module.exports = router;
