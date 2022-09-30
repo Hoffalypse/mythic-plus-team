@@ -25,6 +25,3 @@ noteArr = document.querySelectorAll('.new-note');
 noteArr.forEach((button) => {
   button.addEventListener('click', addNote);
 });
-// document
-//   .querySelector('.new-note')
-//   .addEventListener('submit', addNote);
