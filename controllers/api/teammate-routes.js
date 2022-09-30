@@ -49,6 +49,23 @@ router.delete('/:id', withAuth, async (req, res) => {
   } catch (err) {
     res.status(500).json(err);
   }
-});
+})
+  router.put('/', async (req, res) => {
+    try{
+    const noteData = await Teammates.update (
+      {
+        note: req.body.note
+      },
+      {
+        where: {
+          id: req.body.id
+        },
+      })
+        res.json(noteData);
+      
+    }catch(err) {
+      res.status(500).json(err); 
+    };
+ });
 
 module.exports = router;
