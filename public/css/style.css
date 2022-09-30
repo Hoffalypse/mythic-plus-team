@@ -1,7 +1,9 @@
-*,
 body {
   background-color: black;
   color: white;
+}
+img:hover {
+  cursor: default;
 }
 .pad {
   margin-top: 20px;
@@ -20,14 +22,14 @@ body {
   max-width: 100px;
 }
 
-.logo{
+.logo {
   width: 80px;
   height: 80px;
 }
 
 footer {
   background-color: transparent;
-  position:sticky;
+  position: sticky;
 }
 
 /* style for landing page */
@@ -97,16 +99,50 @@ footer {
 .box {
   margin: 60px 0 0 25px;
 }
+.new-character {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.character-details {
+  background-color: rebeccapurple;
+  border: black 2px solid;
+  box-shadow: 5px 10px 18px greenyellow;
+  padding: 2px;
+}
+.character-page {
+  display: flex;
+  gap: 20%;
+}
+.char-list {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5px;
+}
+.name-container {
+  display: flex;
+  justify-content: center;
+}
+.char-team {
+  padding: 0;
+  height: 25px;
+  width: 25px;
+  box-shadow: 5px 10px 18px greenyellow;
+}
 .char-del {
   padding: 0;
   height: 25px;
   width: 25px;
   box-shadow: 5px 10px 18px greenyellow;
-  position: absolute;
+}
+
+.char-card {
+  width: max-content;
+  display: flex;
+  justify-content: space-around;
 }
 
 /* styling for teammates page */
-
 
 /* styling for login page */
 .extra {
@@ -123,35 +159,36 @@ footer {
   margin-left: 40px;
 }
 
-.sign:hover{
+.sign:hover {
   font-weight: bolder;
- font-size: larger;
+  font-size: larger;
 }
 
-.sign::after, .sign:visited{
-  color:white;
+.sign::after,
+.sign:visited {
+  color: white;
   text-decoration: underline;
 }
 
-.submit{
+.submit {
   background-color: maroon;
 }
 .submit:hover {
-  background-color:maroon;
+  background-color: maroon;
   opacity: 0.5;
 }
 
-.subs{
+.subs {
   margin-left: 50px;
   border: 0px;
 }
 
-.formed{
+.formed {
   margin: 45% 45%;
   background-color: transparent;
 }
 
-.transparent{
+.transparent {
   background-color: transparent;
 }
 
@@ -166,25 +203,26 @@ footer {
   background-size: cover;
 }
 
-.su{
-  color:maroon
+.su {
+  color: maroon;
 }
 
-.loginlink{
-  color: maroon
+.loginlink {
+  color: maroon;
 }
 
-.loginlink:hover{
+.loginlink:hover {
   font-weight: bolder;
   font-size: larger;
 }
 
-.loginlink::after, .loginlink:visited{
+.loginlink::after,
+.loginlink:visited {
   color: maroon;
   text-decoration: underline;
 }
 
-.formatting{
+.formatting {
   margin-left: 40px;
   border: 0px;
 }
