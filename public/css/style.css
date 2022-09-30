@@ -25,6 +25,11 @@ body {
   height: 80px;
 }
 
+footer {
+  background-color: transparent;
+  position:sticky;
+}
+
 /* style for landing page */
 
 .welcome {
@@ -116,7 +121,6 @@ body {
 
 .subs{
   background-color: maroon;
-  border: 1px solid black;
   margin-left: 50px;
   border: 0px;
 }
@@ -130,3 +134,31 @@ body {
   background-color: transparent;
 }
 
+/* signup page */
+.oribos {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('https://cdnb.artstation.com/p/assets/images/images/044/523/905/large/francesca-baerald-fbaerald-shadowlandsmap.jpg?1640259662');
+  background-size: cover;
+}
+
+.su{
+  color:maroon
+}
+
+.loginlink{
+  color: maroon
+}
+
+.loginlink::after, .loginlink:visited{
+  color: maroon;
+  text-decoration: underline;
+}
+
+.formatting{
+  margin-left: 40px;
+  border: 0px;
+}
