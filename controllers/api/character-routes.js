@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { User, Character, Teammates } = require('../../models');
 const withAuth = require('../../utils/auth');
 const { capitalizeFirstLetter } = require('../../utils/helpers');
+const axios = require('axios').default;
 
 //--------------at api/characters--------------------------
 
@@ -17,14 +18,19 @@ router.get('/', (req, res) => {
 
 router.post('/', async (req, res) => {
   try {
+    const response = await axios.get(
+      `https://raider.io/api/v1/characters/profile?region=${req.body.region}&realm=${req.body.realm}&name=${req.body.name}&fields=gear%2Cguild%2Cmythic_plus_scores_by_season%3Acurrent`
+    );
+    console.log(response);
+    console.log(response.data.class);
     const newCharacter = await Character.create({
       name: capitalizeFirstLetter(req.body.name),
-      role: req.body.role,
-      avatar: req.body.avatar,
-      char_class: req.body.char_class,
-      spec: req.body.spec,
-      ilvl: req.body.ilvl,
-      current_m_score: req.body.current_m_score,
+      role: response.data.active_spec_role,
+      avatar: response.data.thumbnail_url,
+      char_class: response.data.class,
+      spec: response.data.active_spec_name,
+      ilvl: response.data.gear.item_level_equipped,
+      current_m_score: response.data.mythic_plus_scores_by_season[0].scores.all,
       region: req.body.region,
       realm: req.body.realm,
       user_id: req.session.user_id,
