@@ -62,6 +62,9 @@ body {
 .length {
   max-width: 225px;
 }
+.length2 {
+  max-width: 110px;
+}
 .center {
   text-align: center;
 }
