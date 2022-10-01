@@ -96,6 +96,17 @@ footer {
 
 /* Styling for character page */
 
+.char-bod{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('/images/jailer.gif'); background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center ;
+}
+
 .box {
   margin: 60px 0 0 25px;
 }
@@ -164,9 +175,10 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url('https://preview.redd.it/8fkotikgfsk51.png?auto=webp&s=0914628ff62737c7b31197eb99bbddb79959e9d0');
-  background-size: cover;
-}
+  background-image: url('/images/giphy-1.gif'); background-repeat: no-repeat;
+  background-size:cover;
+  background-position: center ;
+  }
 
 /* styling for login page */
 .extra {
@@ -176,6 +188,7 @@ footer {
   justify-content: center;
   align-items: center;
   background-image: url('https://www.icy-veins.com/forums/uploads/monthly_2020_04/350764513_worldmapshadowlands.jpg.dc2e81a15d6ffccf20265dd70a9e8d30.jpg');
+  background-position: center;
   background-size: cover;
 }
 .sign {
