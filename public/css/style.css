@@ -31,14 +31,21 @@ footer {
   background-color: transparent;
   position: sticky;
 }
-
+.btn-main {
+  background-color: maroon;
+  color: white;
+  border: 0px;
+}
 /* style for landing page */
 
 .welcome {
   color: orangered;
+  /* color: maroon; */
+  text-shadow: 5px 5px 5px white;
   text-align: left;
   font-size: 75px;
   margin: 50px 0 0 0;
+  font-family: 'Open Sans', sans-serif;
 }
 
 #big-logo-img {
@@ -73,11 +80,11 @@ footer {
   width: 600px;
 }
 
-#submit {
+/* #submit {
   background-color: white;
   color: orangered;
   font-weight: bolder;
-}
+} */
 
 #response {
   font-size: 20px;
@@ -92,6 +99,15 @@ footer {
 .center {
   text-align: center;
   margin: 75px 0 0 0;
+}
+
+#lastName{
+  margin-left:1px
+}
+
+#email{
+  margin-left: 6px;
+  
 }
 
 /* Styling for character page */
@@ -192,6 +208,16 @@ ul {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+}
+
+.team-display{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content:space-evenly; 
+  align-items: space-evenly;
+  width: 700px;
+  height: 500px;
 }
 
 /* styling for login page */
