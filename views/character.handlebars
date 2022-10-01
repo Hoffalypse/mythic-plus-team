@@ -426,7 +426,18 @@
       {{> character-details}}
       {{/if}}
     </div>
-
+<section class="char-detail">
+        <div id="char-icon"><img src="{{avatar}}" alt="character icon picture"></div>
+        <div id="char-specs">
+          <!--Need to double check the data being inputted in these fields-->
+          <ul>
+            <li>Name: {{char.name}}</li>
+            <li>Role: {{char.role}}</li>
+            <li>Class: {{char.char_class}}</li>
+            <li>Ilvl: {{char.ilvl}}</li>
+          </ul>
+        </div>
+    </section>
   </main>
 
   <script src="js/character-add.js"></script>
