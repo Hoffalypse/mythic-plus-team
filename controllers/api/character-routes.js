@@ -16,6 +16,17 @@ router.get('/', (req, res) => {
     });
 });
 
+router.get('/:id', withAuth, async (req, res) => {
+  try {
+    const charData = await Character.findByPk(req.params.id, {});
+    const char = charData.get({ plain: true });
+    console.log(char);
+    res.status(200).json(char);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 router.post('/', async (req, res) => {
   try {
     const response = await axios.get(
@@ -39,6 +50,34 @@ router.post('/', async (req, res) => {
     res.status(200).json(newCharacter);
   } catch (err) {
     res.status(420).json(err);
+  }
+});
+
+router.put('/:id', withAuth, async (req, res) => {
+  try {
+    const activeStatusOff = await Character.update(
+      {
+        is_active: false,
+      },
+      {
+        where: {
+          is_active: true,
+        },
+      }
+    );
+    const activeStatusOn = await Character.update(
+      {
+        is_active: true,
+      },
+      {
+        where: {
+          id: req.body.id,
+        },
+      }
+    );
+    res.status(200).json({ activeStatusOff, activeStatusOn });
+  } catch (err) {
+    res.status(500).json(err);
   }
 });
 

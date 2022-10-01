@@ -1,7 +1,9 @@
-*,
 body {
   background-color: black;
   color: white;
+}
+img:hover {
+  cursor: default;
 }
 .pad {
   margin-top: 20px;
@@ -20,14 +22,14 @@ body {
   max-width: 100px;
 }
 
-.logo{
+.logo {
   width: 80px;
   height: 80px;
 }
 
 footer {
   background-color: transparent;
-  position:sticky;
+  position: sticky;
 }
 
 /* style for landing page */
@@ -94,19 +96,103 @@ footer {
 
 /* Styling for character page */
 
+.char-bod {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('/images/jailer.gif');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
 .box {
-  margin: 60px 0 0 25px;
+  margin: 50px 0px 0px 0px;
+}
+
+.page-title {
+  font-size: 50px;
+  margin-bottom: 25px;
+}
+
+.new-character {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.character-details {
+  background-color: rebeccapurple;
+  border: black 2px solid;
+  box-shadow: 5px 10px 18px greenyellow;
+  padding: 2px;
+}
+.character-page {
+  display: flex;
+  gap: 20%;
+}
+.char-list {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5px;
+}
+.name-container {
+  display: flex;
+  justify-content: center;
+}
+.char-pick {
+  border: solid black 3px;
+  box-shadow: 5px 10px 18px greenyellow;
+}
+
+.char-team {
+  border: solid black 3px;
+  padding: 0;
+  height: 28px;
+  width: 28px;
+  box-shadow: 5px 10px 18px greenyellow;
 }
 .char-del {
+  border: solid black 3px;
   padding: 0;
-  height: 25px;
-  width: 25px;
+  height: 28px;
+  width: 28px;
   box-shadow: 5px 10px 18px greenyellow;
-  position: absolute;
 }
 
-/* styling for teammates page */
+.char-card {
+  width: max-content;
+  display: flex;
+  justify-content: space-around;
+}
 
+.char-detail {
+
+  font-size: 40px;
+  background-color: black;
+  border: 5px solid white;
+  color: white;
+  height: 600px;
+  width: 600px;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+/* styling for teammates page */
+.team-body {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('/images/giphy-1.gif');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
 
 /* styling for login page */
 .extra {
@@ -116,6 +202,7 @@ footer {
   justify-content: center;
   align-items: center;
   background-image: url('https://www.icy-veins.com/forums/uploads/monthly_2020_04/350764513_worldmapshadowlands.jpg.dc2e81a15d6ffccf20265dd70a9e8d30.jpg');
+  background-position: center;
   background-size: cover;
 }
 .sign {
@@ -123,35 +210,36 @@ footer {
   margin-left: 40px;
 }
 
-.sign:hover{
+.sign:hover {
   font-weight: bolder;
- font-size: larger;
+  font-size: larger;
 }
 
-.sign::after, .sign:visited{
-  color:white;
+.sign::after,
+.sign:visited {
+  color: white;
   text-decoration: underline;
 }
 
-.submit{
+.submit {
   background-color: maroon;
 }
 .submit:hover {
-  background-color:maroon;
+  background-color: maroon;
   opacity: 0.5;
 }
 
-.subs{
+.subs {
   margin-left: 50px;
   border: 0px;
 }
 
-.formed{
+.formed {
   margin: 45% 45%;
   background-color: transparent;
 }
 
-.transparent{
+.transparent {
   background-color: transparent;
 }
 
@@ -166,25 +254,26 @@ footer {
   background-size: cover;
 }
 
-.su{
-  color:maroon
+.su {
+  color: maroon;
 }
 
-.loginlink{
-  color: maroon
+.loginlink {
+  color: maroon;
 }
 
-.loginlink:hover{
+.loginlink:hover {
   font-weight: bolder;
   font-size: larger;
 }
 
-.loginlink::after, .loginlink:visited{
+.loginlink::after,
+.loginlink:visited {
   color: maroon;
   text-decoration: underline;
 }
 
-.formatting{
+.formatting {
   margin-left: 40px;
   border: 0px;
 }
