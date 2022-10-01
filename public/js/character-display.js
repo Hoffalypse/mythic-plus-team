@@ -1,11 +1,14 @@
-const displayCharacterHandler = async (event) => {
+const displayCharacterHandler = (event) => {
   event.preventDefault();
   const id = event.target.attributes['data-id'].nodeValue;
-  const response = await fetch(`/api/characters/${id}`, {
+  fetch(`/api/characters/${id}`, {
     method: 'GET',
     headers: { 'Content-Type': 'application/json' },
-  });
-  charData = response.json();
+  })
+    .then((response) => response.json())
+    .then((char) => {
+      console.log(char);
+    });
 };
 
 charArr = document.querySelectorAll('#char-pick');
