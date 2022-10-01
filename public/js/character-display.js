@@ -8,7 +8,8 @@ const displayCharacterHandler = (event) => {
     .then((response) => response.json())
     .then((char) => {
       console.log(char);
-    });
+    })
+    .catch((err) => console.log(err));
 };
 
 charArr = document.querySelectorAll('#char-pick');
