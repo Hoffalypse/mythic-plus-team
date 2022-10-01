@@ -2,12 +2,14 @@ const displayCharacterHandler = (event) => {
   event.preventDefault();
   const id = event.target.attributes['data-id'].nodeValue;
   fetch(`/api/characters/${id}`, {
-    method: 'GET',
+    method: 'PUT',
+    body: JSON.stringify({
+      id,
+    }),
     headers: { 'Content-Type': 'application/json' },
   })
-    .then((response) => response.json())
-    .then((char) => {
-      console.log(char);
+    .then(function () {
+      document.location.reload();
     })
     .catch((err) => console.log(err));
 };

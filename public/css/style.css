@@ -96,15 +96,16 @@ footer {
 
 /* Styling for character page */
 
-.char-bod{
+.char-bod {
   height: 100%;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url('/images/jailer.gif'); background-repeat: no-repeat;
+  background-image: url('/images/jailer.gif');
+  background-repeat: no-repeat;
   background-size: cover;
-  background-position: center ;
+  background-position: center;
 }
 
 .box {
@@ -167,11 +168,13 @@ footer {
 }
 
 .char-detail {
-  font-size: 35px;
+
+  font-size: 40px;
+  background-color: black;
   border: 5px solid white;
   color: white;
-  height: 400px;
-  width:  600px;
+  height: 600px;
+  width: 600px;
 }
 
 ul {
@@ -179,16 +182,17 @@ ul {
   padding-left: 0;
 }
 /* styling for teammates page */
-.team-body{
+.team-body {
   height: 100%;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url('/images/giphy-1.gif'); background-repeat: no-repeat;
-  background-size:cover;
-  background-position: center ;
-  }
+  background-image: url('/images/giphy-1.gif');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
 
 /* styling for login page */
 .extra {

@@ -53,6 +53,34 @@ router.post('/', async (req, res) => {
   }
 });
 
+router.put('/:id', withAuth, async (req, res) => {
+  try {
+    const activeStatusOff = await Character.update(
+      {
+        is_active: false,
+      },
+      {
+        where: {
+          is_active: true,
+        },
+      }
+    );
+    const activeStatusOn = await Character.update(
+      {
+        is_active: true,
+      },
+      {
+        where: {
+          id: req.body.id,
+        },
+      }
+    );
+    res.status(200).json({ activeStatusOff, activeStatusOn });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 router.delete('/:id', withAuth, async (req, res) => {
   try {
     const data = await Character.destroy({
