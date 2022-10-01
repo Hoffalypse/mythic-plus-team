@@ -192,9 +192,9 @@ footer {
 
 .char-detail {
 
-  font-size: 40px;
-  background-color: black;
-  border: 5px solid white;
+  font-size: 30px;
+  background-color: transparent;
+  /* border: 5px solid white; */
   color: white;
   height: 600px;
   width: 600px;
@@ -203,6 +203,12 @@ footer {
 ul {
   list-style: none;
   padding-left: 0;
+}
+
+#char-icon img{
+margin-left: 15%;
+width: 25%;
+height: 25%;
 }
 /* styling for teammates page */
 .team-body {
