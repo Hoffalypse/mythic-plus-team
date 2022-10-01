@@ -125,7 +125,7 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url('/images/jailer.gif');
+  background-image: url('/images/lk1.gif');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -211,20 +211,20 @@ ul {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url('/images/giphy-1.gif');
+  background-image: url('/images/bg.gif');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
 
-.team-display{
+.team-layout{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content:space-evenly; 
   align-items: space-evenly;
-  width: 700px;
-  height: 500px;
+  /* width: 700px;
+  height: 500px; */
 }
 
 /* styling for login page */
