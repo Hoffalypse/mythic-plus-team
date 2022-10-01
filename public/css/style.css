@@ -99,6 +99,7 @@ footer {
 .box {
   margin: 60px 0 0 25px;
 }
+
 .new-character {
   display: flex;
   flex-direction: column;
@@ -147,6 +148,13 @@ footer {
   width: max-content;
   display: flex;
   justify-content: space-around;
+}
+
+.char-detail {
+  border: 5px solid white;
+  color: white;
+  height: 400px;
+  width:  300px;
 }
 
 /* styling for teammates page */
