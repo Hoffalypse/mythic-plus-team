@@ -32,27 +32,23 @@ footer {
   position: sticky;
 }
 .btn-main {
-  background-color: maroon;
+  background-color: rgb(157, 33, 33);
   color: white;
   border: 0px;
 }
 
 .standout{
-  color: orangered;
-  /* color: maroon; */
-  text-shadow: 5px 5px 5px white;
-  font-family: 'Open Sans', sans-serif;
+  color: maroon;
+  font-family: 'MedievalSharp', cursive;
 }
 /* style for landing page */
 
 .welcome {
-  color: orangered;
-  /* color: maroon; */
-  text-shadow: 5px 5px 5px white;
+  color: rgb(157, 33, 33);
   text-align: left;
   font-size: 75px;
   margin: 50px 0 0 0;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'MedievalSharp', cursive;
 }
 
 #big-logo-img {
@@ -125,7 +121,7 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url('/images/jailer.gif');
+  background-image: url('/images/lk1.gif');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -192,9 +188,9 @@ footer {
 
 .char-detail {
 
-  font-size: 40px;
-  background-color: black;
-  border: 5px solid white;
+  font-size: 30px;
+  background-color: transparent;
+  /* border: 5px solid white; */
   color: white;
   height: 600px;
   width: 600px;
@@ -204,6 +200,12 @@ ul {
   list-style: none;
   padding-left: 0;
 }
+
+#char-icon img{
+margin-left: 15%;
+width: 25%;
+height: 25%;
+}
 /* styling for teammates page */
 .team-body {
   height: 100%;
@@ -211,20 +213,20 @@ ul {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url('/images/giphy-1.gif');
+  background-image: url('/images/bg.gif');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
 
-.team-display{
+.team-layout{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content:space-evenly; 
   align-items: space-evenly;
-  width: 700px;
-  height: 500px;
+  /* width: 700px;
+  height: 500px; */
 }
 
 /* styling for login page */
