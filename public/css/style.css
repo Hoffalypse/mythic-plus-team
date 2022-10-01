@@ -36,6 +36,13 @@ footer {
   color: white;
   border: 0px;
 }
+
+.standout{
+  color: orangered;
+  /* color: maroon; */
+  text-shadow: 5px 5px 5px white;
+  font-family: 'Open Sans', sans-serif;
+}
 /* style for landing page */
 
 .welcome {
