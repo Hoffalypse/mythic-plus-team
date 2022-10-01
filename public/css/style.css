@@ -32,27 +32,23 @@ footer {
   position: sticky;
 }
 .btn-main {
-  background-color: maroon;
+  background-color: rgb(157, 33, 33);
   color: white;
   border: 0px;
 }
 
 .standout{
-  color: orangered;
-  /* color: maroon; */
-  text-shadow: 5px 5px 5px white;
-  font-family: 'Open Sans', sans-serif;
+  color: maroon;
+  font-family: 'MedievalSharp', cursive;
 }
 /* style for landing page */
 
 .welcome {
-  color: orangered;
-  /* color: maroon; */
-  text-shadow: 5px 5px 5px white;
+  color: rgb(157, 33, 33);
   text-align: left;
   font-size: 75px;
   margin: 50px 0 0 0;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'MedievalSharp', cursive;
 }
 
 #big-logo-img {
