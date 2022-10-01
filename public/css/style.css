@@ -109,7 +109,12 @@ footer {
 }
 
 .box {
-  margin: 80px 0px 0px 0px;
+  margin: 50px 0px 0px 0px;
+}
+
+.page-title {
+  font-size: 50px;
+  margin-bottom: 25px;
 }
 
 .new-character {
@@ -163,6 +168,7 @@ footer {
 }
 
 .char-detail {
+
   font-size: 40px;
   background-color: black;
   border: 5px solid white;
