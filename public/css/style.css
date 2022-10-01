@@ -158,6 +158,15 @@ footer {
 }
 
 /* styling for teammates page */
+.team-body{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('https://preview.redd.it/8fkotikgfsk51.png?auto=webp&s=0914628ff62737c7b31197eb99bbddb79959e9d0');
+  background-size: cover;
+}
 
 /* styling for login page */
 .extra {
