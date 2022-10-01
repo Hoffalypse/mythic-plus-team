@@ -39,18 +39,22 @@ Character.init(
       type: DataTypes.INTEGER,
       allowNull: false,
     },
-    region:{
+    region: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    realm:{
+    realm: {
       type: DataTypes.STRING,
       allowNull: false,
     },
     note: {
       type: DataTypes.TEXT,
       allowNull: true,
-      defaultValue: ""
+      defaultValue: '',
+    },
+    is_active: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false,
     },
 
     user_id: {
