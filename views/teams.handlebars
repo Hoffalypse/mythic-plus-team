@@ -1,49 +1,52 @@
 <body class="team-body">
-<div class="container team-contents">
-   <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-  <h1 class="center standout">{{team.name}}'s Team</h1>
-  <div class="row">
-    <div class="col-10 team-cont">
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <section class="team-layout">
-        {{#each team.teammates }}
-        <div class="column mx-auto">
-          <div class="healer">
+  <div class="container team-contents">
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <h1 class="center standout">{{team.name}}'s Team</h1>
+    <div class="row">
+      <div class="col-10 team-cont">
+        <br />
+        <br />
+        <br />
+        <br />
+        <section class="team-layout">
+          {{#each team.teammates }}
+          <div class="column mx-auto">
+            <div class="healer">
 
-            <img src="{{avatar}}" class="card-img-top placeholder" alt="placeholder">
-            <div class="card-body">
-              <h5 class="card-title">{{name}}</h5>
-              <h5 class="card-text">Role: {{role}} </h5>
+              <img src="{{avatar}}" class="card-img-top placeholder" alt="placeholder">
+              <div class="card-body">
+                <h5 class="card-title">{{name}}</h5>
+                <h5 class="card-text">Role: {{role}} </h5>
+              </div>
             </div>
+            {{!--
+          </div> --}}
+          <div class="column mx-auto">
+            <div class="team">
+              <h5 class="card-title">Class: {{char_class}}</h5>
+              <h5 class="card-text">Ilvl:{{ilvl}} </h5>
+              <p>{{note}}</p>
+            </div>
+            <form class="input-group mb-3" data-id={{id}}>
+              <input type="text" class="form-control length2 " placeholder="Add Note" id="note" aria-label="Note add"
+                aria-describedby="button-addon2">
+              <button class="btn btn-outline-secondary new-note" type="submit" id="button-addon2"><i
+                  data-id={{id}}>✏️</i></button>
+            </form>
+            <button class="btn btn-danger char-del"><i class="bi bi-eraser" style="background-color: transparent;"
+                id="tmate-del" data-id={{id}}></i></button>
           </div>
-        {{!-- </div> --}}
-        <div class="column mx-auto">
-          <div class="team">
-            <h5 class="card-title">Class: {{char_class}}</h5>
-            <h5 class="card-text">Ilvl:{{ilvl}} </h5>
-            <p>{{note}}</p>
-          </div>
-          <form class="input-group mb-3 new-note" data-id={{id}}>
-             <input type="text" class="form-control length2 " placeholder="Add Note" id="note" aria-label="Note add" aria-describedby="button-addon2">
-              <button class="btn btn-outline-secondary " type="submit" id="button-addon2"><i data-id={{id}}>✏️</i></button>
-          </form>
-          <button class="btn btn-danger char-del"><i class="bi bi-eraser" style="background-color: transparent;"
-              id="tmate-del" data-id={{id}}></i></button>
-        </div>
-        </div>
-        {{/each}}
+      </div>
+      {{/each}}
 
       </section>
     </div>
@@ -453,7 +456,7 @@
     </div>
   </div>
 
-</form>
+  </form>
 </body>
 
 <script src="/js/teammate-add.js"></script>
