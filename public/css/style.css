@@ -1,6 +1,9 @@
 body {
   background-color: black;
   color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 img:hover {
   cursor: default;
@@ -28,8 +31,13 @@ img:hover {
 }
 
 footer {
-  background-color: transparent;
+  margin: 15px;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  height: 15px;
   position: sticky;
+  background-color: transparent;
 }
 .btn-main {
   background-color: rgb(157, 33, 33);
@@ -37,17 +45,20 @@ footer {
   border: 0px;
 }
 
-.standout{
+.standout {
   color: maroon;
   font-family: 'MedievalSharp', cursive;
 }
 /* style for landing page */
+.landing-body {
+  margin-top: 106px;
+  min-height: calc(100vh - 166px);
+}
 
 .welcome {
   color: rgb(157, 33, 33);
   text-align: left;
   font-size: 75px;
-  margin: 50px 0 0 0;
   font-family: 'MedievalSharp', cursive;
 }
 
@@ -104,31 +115,26 @@ footer {
   margin: 75px 0 0 0;
 }
 
-#lastName{
-  margin-left:1px
+#lastName {
+  margin-left: 1px;
 }
 
-#email{
+#email {
   margin-left: 6px;
-  
 }
 
 /* Styling for character page */
 
 .char-bod {
-  height: 100%;
+  margin-top: 106px;
+  min-height: calc(100vh - 166px);
   width: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
   background-image: url('/images/lk1.gif');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-}
-
-.box {
-  margin: 50px 0px 0px 0px;
 }
 
 .page-title {
@@ -187,7 +193,6 @@ footer {
 }
 
 .char-detail {
-
   font-size: 30px;
   background-color: transparent;
   /* border: 5px solid white; */
@@ -201,14 +206,15 @@ ul {
   padding-left: 0;
 }
 
-#char-icon img{
-margin-left: 15%;
-width: 25%;
-height: 25%;
+#char-icon img {
+  margin-left: 15%;
+  width: 25%;
+  height: 25%;
 }
 /* styling for teammates page */
 .team-body {
-  height: 100%;
+  margin-top: 106px;
+  min-height: calc(100vh - 166px);
   width: 100%;
   display: flex;
   justify-content: center;
@@ -218,12 +224,15 @@ height: 25%;
   background-size: cover;
   background-position: center;
 }
+.team-contents {
+  display: flex;
+}
 
-.team-layout{
+.team-layout {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content:space-evenly; 
+  justify-content: space-evenly;
   align-items: space-evenly;
   /* width: 700px;
   height: 500px; */
@@ -231,6 +240,7 @@ height: 25%;
 
 /* styling for login page */
 .extra {
+  margin-top: 106px;
   height: 100%;
   width: 100%;
   display: flex;

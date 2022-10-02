@@ -1,4 +1,4 @@
-const searchWow = async (event) => {
+const searchWow = (event) => {
   event.preventDefault();
   const searchInput = document.querySelector('#wow-search-input').value.trim();
   window.open(

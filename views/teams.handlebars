@@ -1,15 +1,5 @@
-<body class="team-body">
+<div class="team-body">
   <div class="container team-contents">
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
     <h1 class="center standout">{{team.name}}'s Team</h1>
     <div class="row">
       <div class="col-10 team-cont">
@@ -28,8 +18,7 @@
                 <h5 class="card-text">Role: {{role}} </h5>
               </div>
             </div>
-            {{!--
-          </div> --}}
+          </div>
           <div class="column mx-auto">
             <div class="team">
               <h5 class="card-title">Class: {{char_class}}</h5>
@@ -45,10 +34,11 @@
             <button class="btn btn-danger char-del"><i class="bi bi-eraser" style="background-color: transparent;"
                 id="tmate-del" data-id={{id}}></i></button>
           </div>
+        </section>
       </div>
       {{/each}}
 
-      </section>
+
     </div>
 
     <div class="login-card box col-2">
@@ -453,11 +443,12 @@
           <button class="btn btn-primary btn-main new-teammate" type="submit">Add Teammate</button>
           <br><br>
         </div>
+      </form>
     </div>
   </div>
 
-  </form>
-</body>
+
+</div>
 
 <script src="/js/teammate-add.js"></script>
 <script src="/js/teammate-delete.js"></script>
