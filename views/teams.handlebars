@@ -419,13 +419,13 @@
               <p>{{note}}</p>
             </div>
             <form class="input-group mb-3" data-id={{id}}>
-              <input type="text" class="form-control length2 " placeholder="Add Note" id="note" aria-label="Note add"
-                aria-describedby="button-addon2">
-              <button class="btn btn-outline-secondary new-note" type="submit" id="button-addon2"><i
+              <input type="text" class="form-control length2" placeholder="Add Note" data-note={{id}}
+                aria-label="Note add">
+              <button type="submit" class="btn btn-outline-secondary new-note" data-id={{id}}><i
                   data-id={{id}}>✏️</i></button>
             </form>
-            <button class="btn btn-danger char-del"><i class="bi bi-eraser" style="background-color: transparent;"
-                id="tmate-del" data-id={{id}}></i></button>
+            <button type="button" class="btn btn-danger tmate-del" data-id={{id}}><i class="bi bi-eraser"
+                style="background-color: transparent;" data-id={{id}}></i></button>
           </div>
           {{/each}}
         </section>
