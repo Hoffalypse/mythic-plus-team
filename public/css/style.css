@@ -5,6 +5,9 @@ body {
   display: flex;
   flex-direction: column;
 }
+a:hover {
+  cursor: pointer;
+}
 img:hover {
   cursor: default;
 }
@@ -47,6 +50,11 @@ footer {
 
 .standout {
   color: maroon;
+  font-family: 'MedievalSharp', cursive;
+}
+
+.standout-2 {
+  color: white;
   font-family: 'MedievalSharp', cursive;
 }
 /* style for landing page */
@@ -249,9 +257,30 @@ ul {
   background-position: center;
   background-size: cover;
 }
+.login-card {
+  background: rgba(0, 0, 0, 0.75);
+  border: solid maroon 3px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3px;
+}
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3px;
+}
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3px;
+}
+
 .sign {
   color: white;
-  margin-left: 40px;
 }
 
 .sign:hover {
@@ -267,6 +296,7 @@ ul {
 
 .submit {
   background-color: maroon;
+  margin-top: 5px;
 }
 .submit:hover {
   background-color: maroon;
@@ -317,9 +347,4 @@ ul {
 .loginlink:visited {
   color: maroon;
   text-decoration: underline;
-}
-
-.formatting {
-  margin-left: 40px;
-  border: 0px;
 }
