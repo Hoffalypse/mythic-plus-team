@@ -2,7 +2,7 @@ const addNote = async (event) => {
   event.preventDefault();
 
   const id = event.target.attributes['data-id'].nodeValue;
-  const note = document.querySelector('#note').value.trim();
+  const note = document.querySelector(`[data-note="${id}"]`).value.trim();
 
   console.log(id, note);
   if (note) {
@@ -22,6 +22,7 @@ const addNote = async (event) => {
 };
 
 noteArr = document.querySelectorAll('.new-note');
+console.log(noteArr);
 noteArr.forEach((button) => {
   button.addEventListener('click', addNote);
 });
