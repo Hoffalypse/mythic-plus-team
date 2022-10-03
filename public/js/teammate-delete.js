@@ -14,7 +14,7 @@ const deleteTeammateHandler = async (event) => {
   }
 };
 
-charArr = document.querySelectorAll('#tmate-del');
+charArr = document.querySelectorAll('.tmate-del');
 charArr.forEach((button) => {
   button.addEventListener('click', deleteTeammateHandler);
 });

@@ -8,6 +8,9 @@ body {
 a:hover {
   cursor: pointer;
 }
+/* button > * {
+  pointer-events: none;
+} */
 img:hover {
   cursor: default;
 }
@@ -243,6 +246,14 @@ ul {
   align-items: space-evenly;
   /* width: 700px;
   height: 500px; */
+}
+
+.tmate-del {
+  border: solid black 3px;
+  padding: 0;
+  height: 28px;
+  width: 28px;
+  box-shadow: 5px 10px 18px greenyellow;
 }
 
 /* styling for login page */
