@@ -4,7 +4,6 @@ const session = require('express-session');
 const exphbs = require('express-handlebars');
 const sequelize = require('./config/connection');
 const routes = require('./controllers');
-console.log("weeeeeeeeeeeee");
 const helpers = require('./utils/helpers');
 const _ = require('lodash');
 
