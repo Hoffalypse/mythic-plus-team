@@ -1,3 +1,5 @@
+const { ExpressHandlebars } = require("express-handlebars");
+
 const roleIcon = (role) => {
   let roleImg = '';
   switch (role) {
@@ -14,7 +16,10 @@ const roleIcon = (role) => {
   }
   return roleImg;
 };
+// Handlebars.registerHelper("compile",function(num) {
 
+
+// })
 // program to convert first letter of a string to uppercase
 const capitalizeFirstLetter = (str) => {
   const capitalized = str.replace(/^./, str[0].toUpperCase());

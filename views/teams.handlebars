@@ -21,23 +21,28 @@
       <br/>
       <section class="team-layout">
         {{#each team.teammates }}
+       
+       
+       
+     
         <div class="column mx-auto">
           <div class="healer">
 
             <img src="{{avatar}}" class="card-img-top placeholder" alt="placeholder">
             <div class="card-body">
-              <h5 class="card-title">{{name}}</h5>
+              <h5 class="card-title" >{{name}}</h5>
               <h5 class="card-text">Role: {{role}} </h5>
             </div>
           </div>
-        {{!-- </div> --}}
+        
         <div class="column mx-auto">
+          
           <div class="team">
             <h5 class="card-title">Class: {{char_class}}</h5>
             <h5 class="card-text">Ilvl:{{ilvl}} </h5>
             <p>{{note}}</p>
           </div>
-          <form class="input-group mb-3 new-note" data-id={{id}}>
+          <form class="input-group mb-3 new-note" data-id={{id}} >
              <input type="text" class="form-control length2 " placeholder="Add Note" id="note" aria-label="Note add" aria-describedby="button-addon2">
               <button class="btn btn-outline-secondary " type="submit" id="button-addon2"><i data-id={{id}}>✏️</i></button>
           </form>
@@ -45,6 +50,7 @@
               id="tmate-del" data-id={{id}}></i></button>
         </div>
         </div>
+        
         {{/each}}
 
       </section>
@@ -446,7 +452,7 @@
           <option value="Zealot Blade">
 
         </datalist>
-
+        {{!-- <p id="mAverage"></p> --}}
 
         <div class="form-group center1">
           <button class="btn btn-primary btn-main new-teammate" type="submit">Add Teammate</button>
@@ -461,3 +467,5 @@
 <script src="/js/teammate-add.js"></script>
 <script src="/js/teammate-delete.js"></script>
 <script src="/js/add-note.js"></script>
+ <script src="/js/totals.js"></script>
+

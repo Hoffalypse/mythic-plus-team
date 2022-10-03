@@ -30,6 +30,7 @@
     "express-session": "^1.17.3",
     "lodash": "^4.17.21",
     "mysql2": "^2.3.3",
+    "passport-bnet": "^2.0.0",
     "sequelize": "^6.23.2",
     "slug": "^8.0.0"
   },

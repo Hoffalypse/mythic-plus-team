@@ -2,6 +2,7 @@ const router = require('express').Router();
 const sequelize = require('../config/connection');
 const { User, Character, Teammates } = require('../models');
 const withAuth = require('../utils/auth');
+// var passport = require('passport-bnet').Strategy;
 
 router.get('/', async (req, res) => {
   try {
@@ -56,4 +57,18 @@ router.post('/logout', (req, res) => {
     res.status(404).end();
   }
 });
+
+router.get( '/oauth/userinfo', (req, res) => {
+
+  router.get('/auth/bnet',
+    passport.authenticate('bnet'));
+ 
+router.get('/auth/bnet/callback',
+    passport.authenticate('bnet', { failureRedirect: '/' }),
+    function(req, res){
+        res.redirect('/');
+    });
+  res.Json()
+
+})
 module.exports = router;
