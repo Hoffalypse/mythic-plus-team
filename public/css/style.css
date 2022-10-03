@@ -240,7 +240,7 @@ ul {
 /* styling for login page */
 .extra {
   margin-top: 106px;
-  height: 100%;
+  min-height: calc(100vh - 166px);
   width: 100%;
   display: flex;
   justify-content: center;
@@ -289,13 +289,15 @@ ul {
 
 /* signup page */
 .oribos {
-  height: 100%;
+  margin-top: 106px;
+  min-height: calc(100vh - 166px);
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   background-image: url('https://cdnb.artstation.com/p/assets/images/images/044/523/905/large/francesca-baerald-fbaerald-shadowlandsmap.jpg?1640259662');
   background-size: cover;
+  background-position: center;
 }
 
 .su {
