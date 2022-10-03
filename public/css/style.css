@@ -237,6 +237,13 @@ ul {
 .team-contents {
   display: flex;
 }
+.sizing{
+  font-size: 45px;
+  font-weight: bolder;
+}
+.score{
+  font-weight: bold;
+}
 
 .team-layout {
   display: flex;
@@ -358,4 +365,11 @@ ul {
 .loginlink:visited {
   color: maroon;
   text-decoration: underline;
+}
+@media screen and (max-width:1400px){
+  #big-logo-img {
+    width: 120px;
+    height: 120px;
+  }
+
 }
