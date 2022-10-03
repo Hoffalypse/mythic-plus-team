@@ -409,7 +409,8 @@
           {{#each team.teammates }}
           <div class="column mx-auto p-2">
 
-
+             <p hidden class="numbers">{{current_m_score}}</p>
+             <p hidden class="ilvl">{{ilvl}}</p>
             <img src="{{avatar}}" class="card-img-top placeholder" alt="placeholder">
             <div class="card-body">
               <h5 class="card-title" >{{name}}</h5>
@@ -429,7 +430,10 @@
           </div>
           {{/each}}
         </section>
+        
       </div>
+      <h1 class="center standout">Average Team Score: <span id="average-m"></span></h1>
+      <h1 class="center standout">Average Item Level: <span id="average-ilvl"></span></h1>
     </div>
   </div>
 </div>
@@ -437,3 +441,5 @@
 <script src="/js/teammate-add.js"></script>
 <script src="/js/teammate-delete.js"></script>
 <script src="/js/add-note.js"></script>
+<script src="/js/totals.js"></script>
+<script src="/js/avg-lvl.js"></script>
