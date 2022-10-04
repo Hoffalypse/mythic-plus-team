@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const { json } = require('express');
 const { User, Character, Teammates } = require('../../models');
 const withAuth = require('../../utils/auth');
 const { capitalizeFirstLetter } = require('../../utils/helpers');
@@ -32,8 +33,25 @@ router.post('/', async (req, res) => {
     const response = await axios.get(
       `https://raider.io/api/v1/characters/profile?region=${req.body.region}&realm=${req.body.realm}&name=${req.body.name}&fields=gear%2Cguild%2Cmythic_plus_scores_by_season%3Acurrent`
     );
-    console.log(response);
-    console.log(response.data.class);
+    
+    // console.log(req.session.token.access_token);
+    var options = {
+      method: 'GET',
+      url: `https://us.api.blizzard.com/profile/wow/character/${req.body.realm}/${req.body.name}/character-media`,
+      params: {
+        namespace: `profile-${req.body.region}`,
+        locale: `en_${req.body.region}`,
+        access_token: `${req.session.token.access_token}`
+      }
+    };
+    
+    axios.request(options).then(function (response2) {
+      console.log(response2.data.assets[3].value);
+    let keys = Object.keys(response2.data.assets);
+    console.log(keys);
+    }).catch(function (error) {
+      console.error(error);
+    });
     const newCharacter = await Character.create({
       name: capitalizeFirstLetter(req.body.name),
       role: response.data.active_spec_role,

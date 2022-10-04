@@ -4,7 +4,7 @@ const addNote = async (event) => {
   const id = event.target.attributes['data-id'].nodeValue;
   const note = document.querySelector(`[data-note="${id}"]`).value.trim();
 
-  console.log(id, note);
+
   if (note) {
     fetch(`/api/teammates`, {
       method: 'PUT',
