@@ -3,6 +3,7 @@ const { json } = require('express');
 const { User, Character, Teammates } = require('../../models');
 const withAuth = require('../../utils/auth');
 const { capitalizeFirstLetter } = require('../../utils/helpers');
+const { options } = require('./user-routes');
 const axios = require('axios').default;
 
 //--------------at api/characters--------------------------
@@ -34,23 +35,38 @@ router.post('/', async (req, res) => {
       `https://raider.io/api/v1/characters/profile?region=${req.body.region}&realm=${req.body.realm}&name=${req.body.name}&fields=gear%2Cguild%2Cmythic_plus_scores_by_season%3Acurrent`
     );
     
-    var options = {
-      method: 'GET',
-      url: `https://us.api.blizzard.com/profile/wow/character/${req.body.realm}/${req.body.name}/character-media`,
-      params: {
-        namespace: `profile-${req.body.region}`,
-        locale: `en_${req.body.region}`,
-        access_token: `${req.session.token.access_token}`
-      }
-    };
+    // var options = {
+    //   method: 'GET',
+    //   url: `https://us.api.blizzard.com/profile/wow/character/${req.body.realm}/${req.body.name}/character-media`,
+    //   params: {
+    //     namespace: `profile-${req.body.region}`,
+    //     locale: `en_${req.body.region}`,
+    //     access_token: `${req.session.token.access_token}`
+    //   }
+    // };
     
-    axios.request(options).then(function (response2) {
-      console.log(response2.data.assets[3].value);
-    // let keys = Object.keys(response2.data.assets);
-    // console.log(keys);
-    }).catch(function (error) {
-      console.error(error);
-    });
+    // axios.request(options).then(function (response2) {
+    //   console.log(response2.data.assets[3].value);
+    //     console.log(response.data.active_spec_role)
+    // }).catch(function (error) {
+    //   console.error(error);
+    // });
+    async function makeRequest(){
+      var options = {
+          method: 'GET',
+          url: `https://us.api.blizzard.com/profile/wow/character/${req.body.realm}/${req.body.name}/character-media`,
+          params: {
+            namespace: `profile-${req.body.region}`,
+            locale: `en_${req.body.region}`,
+            access_token: `${req.session.token.access_token}`,
+        },
+         
+      }
+      var newRes = await axios(options)
+      console.log(newRes.data.assets[3].value)
+      
+    
+
     const newCharacter = await Character.create({
       name: capitalizeFirstLetter(req.body.name),
       role: response.data.active_spec_role,
@@ -63,6 +79,9 @@ router.post('/', async (req, res) => {
       realm: req.body.realm,
       user_id: req.session.user_id,
     });
+ 
+    
+
     const char = await Character.findOne({
       where: { name: `${req.body.name}` },
     });
@@ -78,12 +97,14 @@ router.post('/', async (req, res) => {
       realm: req.body.realm,
       character_id: char.id,
     });
-
+  
     res.status(200).json({ newCharacter, newTeammate });
+  }
+  makeRequest();
   } catch (err) {
     res.status(420).json(err);
   }
-});
+})
 
 router.put('/:id', withAuth, async (req, res) => {
   try {
