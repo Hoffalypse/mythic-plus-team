@@ -6,19 +6,19 @@ const newCharacterHandler = async (event) => {
   const realm = document.querySelector('#realm-input').value;
 
   if (name && region && realm) {
-    const response = await fetch(`/api/characters`, {
-      method: 'POST',
-      body: JSON.stringify({
-        name,
-        region,
-        realm,
-      }),
-      headers: { 'Content-Type': 'application/json' },
-    });
-    if (response.ok) {
+    try {
+      await fetch(`/api/characters`, {
+        method: 'POST',
+        body: JSON.stringify({
+          name,
+          region,
+          realm,
+        }),
+        headers: { 'Content-Type': 'application/json' },
+      });
       document.location.reload();
-    } else {
-      alert('No Dice');
+    } catch (err) {
+      console.log(err);
     }
   }
 };
