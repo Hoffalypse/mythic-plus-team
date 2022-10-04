@@ -71,6 +71,7 @@ router.post('/', async (req, res) => {
       name: capitalizeFirstLetter(req.body.name),
       role: response.data.active_spec_role,
       avatar: response.data.thumbnail_url,
+      image: newRes.data.assets[3].value,
       char_class: response.data.class,
       spec: response.data.active_spec_name,
       ilvl: response.data.gear.item_level_equipped,

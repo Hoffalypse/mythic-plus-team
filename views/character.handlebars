@@ -424,9 +424,11 @@
       </div>
 
       <section class="char-detail">
+        
         {{#each characters as |character|}}
         {{#if is_active}}
-        <div id="char-icon"><img src="{{avatar}}" alt="character icon picture"></div>
+        
+       <div class="full"><img src="{{image}}" alt="character large picture"></div>
         <div id="char-specs">
           <!--Need to double check the data being inputted in these fields-->
           <ul>
@@ -436,8 +438,10 @@
             <li>Spec: {{spec}}</li>
             <li>Ilvl: {{ilvl}}</li>
             <li>Current M+ Score: {{current_m_score}}</li>
+            
           </ul>
         </div>
+         
         {{/if}}
         {{/each}}
 
