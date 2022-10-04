@@ -387,20 +387,45 @@ ul {
   };
 }
 
-@media screen  and (max-width:650px) {
+@media screen  and (max-width:770px) {
   .teammate-form-box{
     display: block;
     width: 100%;
     height: 100%;
     margin: auto;
-  };
+  }
   .team-cont{
     display: block;
-    margin-left: auto;  
-  };
-  /* .support{
-    width: 5px;
-  } */
+    margin: auto;  
+  }
+  .support{
+    display: block;
+    width: 400px;
+    height:auto;
+  }
+  .char-bod, .team-body{
+    overflow: hidden;
+    overflow-X: hidden;
+  }
+  .land-bod{
+    overflow: hidden;
+    overflow-X: hidden;
+  }
+  .char-form {
+    display:block;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+  }
+  .char-detail {
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+  }
+  .char-bod{
+    background-size: cover;
+  }
 }
 
 @media screen  and (max-width:400px) {
@@ -409,13 +434,38 @@ ul {
     width: 100%;
     height: 100%;
     margin: auto;
-  };
+  }
   .team-cont{
     display: block;
-    margin:auto;
-  };
-  /* #my-form{
+    margin: auto;
+  }
+  .support{
     display: block;
-    width: auto;
-  } */
+    width: 400px;
+    height:auto;
+  }
+  .char-bod, .team-body{
+    overflow: hidden;
+    overflow-X: hidden;
+  }
+  .land-bod{
+    overflow: hidden;
+    overflow-X: hidden;
+  }
+  .char-form {
+    display:block;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+  }
+  .char-detail {
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+  }
+  .char-bod{
+    background-size: cover;
+  }
+
 }
