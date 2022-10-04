@@ -34,7 +34,6 @@ router.post('/', async (req, res) => {
       `https://raider.io/api/v1/characters/profile?region=${req.body.region}&realm=${req.body.realm}&name=${req.body.name}&fields=gear%2Cguild%2Cmythic_plus_scores_by_season%3Acurrent`
     );
     
-    // console.log(req.session.token.access_token);
     var options = {
       method: 'GET',
       url: `https://us.api.blizzard.com/profile/wow/character/${req.body.realm}/${req.body.name}/character-media`,
@@ -47,8 +46,8 @@ router.post('/', async (req, res) => {
     
     axios.request(options).then(function (response2) {
       console.log(response2.data.assets[3].value);
-    let keys = Object.keys(response2.data.assets);
-    console.log(keys);
+    // let keys = Object.keys(response2.data.assets);
+    // console.log(keys);
     }).catch(function (error) {
       console.error(error);
     });
