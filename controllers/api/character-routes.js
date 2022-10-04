@@ -6,6 +6,7 @@ const { capitalizeFirstLetter } = require('../../utils/helpers');
 const { options } = require('./user-routes');
 const axios = require('axios').default;
 const slug = require('slug');
+const _ = require('lodash');
 
 //--------------at api/characters--------------------------
 
@@ -39,7 +40,7 @@ router.post('/', async (req, res) => {
       method: 'GET',
       url: `https://us.api.blizzard.com/profile/wow/character/${slug(
         req.body.realm
-      )}/${req.body.name}/character-media`,
+      )}/${_.lowerCase(req.body.name)}/character-media`,
       params: {
         namespace: `profile-${req.body.region}`,
         locale: `en_${req.body.region}`,
