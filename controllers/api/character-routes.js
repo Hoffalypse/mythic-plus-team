@@ -31,27 +31,12 @@ router.get('/:id', withAuth, async (req, res) => {
 
 router.post('/', async (req, res) => {
   try {
-    const response = await axios.get(
-      `https://raider.io/api/v1/characters/profile?region=${req.body.region}&realm=${req.body.realm}&name=${req.body.name}&fields=gear%2Cguild%2Cmythic_plus_scores_by_season%3Acurrent`
-    );
     
-    // var options = {
-    //   method: 'GET',
-    //   url: `https://us.api.blizzard.com/profile/wow/character/${req.body.realm}/${req.body.name}/character-media`,
-    //   params: {
-    //     namespace: `profile-${req.body.region}`,
-    //     locale: `en_${req.body.region}`,
-    //     access_token: `${req.session.token.access_token}`
-    //   }
-    // };
     
-    // axios.request(options).then(function (response2) {
-    //   console.log(response2.data.assets[3].value);
-    //     console.log(response.data.active_spec_role)
-    // }).catch(function (error) {
-    //   console.error(error);
-    // });
     async function makeRequest(){
+      const response = await axios.get(
+        `https://raider.io/api/v1/characters/profile?region=${req.body.region}&realm=${req.body.realm}&name=${req.body.name}&fields=gear%2Cguild%2Cmythic_plus_scores_by_season%3Acurrent`
+      );
       var options = {
           method: 'GET',
           url: `https://us.api.blizzard.com/profile/wow/character/${req.body.realm}/${req.body.name}/character-media`,
@@ -63,9 +48,7 @@ router.post('/', async (req, res) => {
          
       }
       var newRes = await axios(options)
-      console.log(newRes.data.assets[3].value)
-      
-    
+      console.log(newRes.data.assets[3].value) 
 
     const newCharacter = await Character.create({
       name: capitalizeFirstLetter(req.body.name),
