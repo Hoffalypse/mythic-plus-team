@@ -1,18 +1,21 @@
-<div class="container landing-body">
-  <h1 class="welcome">Welcome to Mythic+ Teams &nbsp;<img id="big-logo-img" src="./images/mplusorc.png"
-      alt="logo placeholder"></h1>
-  <header class="pb-3 mb-4 border-bottom">
-    <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
-      <svg xmlns="http://www.w3.org/2000/svg" width="40" height="32" class="me-2" viewBox="0 0 118 94" role="img">
-        <title>Mythic+ Teams</title>
-      </svg>
-      <span class="fs-4" style="color:white">In the World of Warcraft, Mythic+ provides a way for players to engage in
-        progressively more
-        challenging content to have fun, earn better loot, and improve their skills. With Mythic+ Teams you can easily
-        construct your character teams before each challenge to optimize planning and execution.</span>
-    </a>
-  </header>
+<div class="land-bod">
+  <div class="container landing-body">
+    <h1 class="welcome">Welcome to Mythic+ Teams &nbsp;<img id="big-logo-img" src="./images/mplusorc.png"
+        alt="logo placeholder" /></h1>
+    <header class="pb-3 mb-4 border-bottom">
+      <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
+        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="32" class="me-2" viewBox="0 0 118 94" role="img">
+          <title>Mythic+ Teams</title>
+        </svg>
+        <span class="fs-4" style="color:white">In the World of Warcraft, Mythic+
+          provides a way for players to engage in progressively more challenging
+          content to have fun, earn better loot, and improve their skills. With
+          Mythic+ Teams you can easily construct your character teams before each
+          challenge to optimize planning and execution.</span>
+      </a>
+    </header>
 
+<<<<<<< HEAD
   <div class="p-5 mb-4 rounded-3 faction">
     <img src="./images/factions.jpg" />
     <div class="container-fluid py-5">
@@ -35,47 +38,77 @@
           profile. Then you can add other WOW players and begin planning out your Mythic+ quests!</p>
         <!--Need to href this signup button-->
         <a class="btn btn-outline-light" type="button" href="/signup">Sign Up Here</a>
+=======
+    <div class="p-5 mb-4 rounded-3 faction">
+      <div class="container-fluid py-5">
+        <img class="shields" src="./images/factions.jpg" />
+        <h1 class="display-5 fw-bold">Welcome Back</h1>
+        <p class="col-md-8 fs-4">If you are an active user, please login by
+          clicking the button below. Otherwise feel free to scroll below for how
+          our site works.</p>
+        <!--Need to href this login button-->
+        <button class="btn btn-primary btn-lg" type="button" onClick="window.location.href='/login'">Jump To
+          Login</button>
+>>>>>>> b8fc36a9763e7660fc4df8cb78efe6f93192b778
       </div>
     </div>
-    <aside class="col-12 col-lg-4 twitter">
-      <div id="twitter">
-        <a class="twitter-timeline" data-height="1000" data-width="max" data-theme="dark"
-          href="https://twitter.com/WarcraftDevs">Tweets by WarcraftDevs</a>
-        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    <br />
+    <br />
+    <div class="row align-items-md-stretch">
+      <div class="col-md-6">
+        <div class="h-100 rounded-3 guldan">
+          <img id="guldan" src="./images/gd.png" />
+          <h2>How To Operate The Site</h2>
+          <p>First, you need to create an account. Once successfully logged in you
+            will want to search for your WOW character under the Character tab.
+            When you add your character it will automatically be added to your
+            Team profile. Then you can add other WOW players and begin planning
+            out your Mythic+ quests!</p>
+          <!--Need to href this signup button-->
+          <button class="btn btn-outline-light" type="button" onClick="window.location.href='/signup'">Sign
+            Up Here</button>
+        </div>
       </div>
-    </aside>
+      <aside class="col-12 col-lg-4 twitter">
+        <div id="twitter">
+          <a class="twitter-timeline" data-height="1000" data-width="max" data-theme="dark"
+            href="https://twitter.com/WarcraftDevs">Tweets by WarcraftDevs</a>
+          <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
+      </aside>
+    </div>
   </div>
-</div>
-<div class="col-md-6">
-  <div class="h-55 p-5 border rounded-3 support">
-    <h2>Need to Contact Us?</h2>
-    <p>Have questions, comments, technical difficulties or business inquieres? Please message us below.</p>
-    <br>
-    <form action="mailto:levi3743@gmail.com" method="post" id="my-form">
-      <div class="form-group">
-        <label for="firstName"> First Name: </label>
-        <input type="text" id="firstName" name="firstName">
-      </div>
-      <div class="form-group">
-        <label for="lastName"> Last Name: </label>
-        <input type="text" id="lastName" name="lastName">
-      </div>
-      <div class="form-group">
-        <label for="email"> Email: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-        <input type="text" id="email" name="email">
-      </div>
-      <div class="form-group">
-        <label for="message"> Message: &nbsp;&nbsp;</label>
-        <textarea name="message" id="message" cols="15" rows="10"></textarea>
-      </div>
-      <br>
-      <button class="btn btn-main btn-outline-secondary " id="submit" type="button">Submit</button>
-      <br>
-      <br>
-      <div>
-        <h3 id="response"></h3>
-      </div>
-    </form>
+  <div class="col-md-6">
+    <div class="h-55 p-5 border rounded-3 support">
+      <h2>Need to Contact Us?</h2>
+      <p>Have questions, comments, technical difficulties or business inquieres?
+        Please message us below.</p>
+      <br />
+      <section class="form">
+        <div class="container-2">
+          <form action="https://formspree.io/f/mgeqyzaw" method="post" id="my-form">
+            <div class="form-group">
+              <label for="firstName"> First Name:</label>
+              <input type="text" id="firstName" name="firstName" />
+            </div>
+            <div class="form-group">
+              <label for="lastName"> Last Name:</label>
+              <input type="text" id="lastName" name="lastName" />
+            </div>
+            <div class="form-group">
+              <label for="email"> Email:</label>
+              <input type="text" id="email" name="email" />
+            </div>
+            <div class="form-group">
+              <label for="message"> Message:</label>
+              <textarea name="message" id="message" cols="15" rows="10"></textarea>
+            </div>
+            <button class="btn-main" id="btn-support" type="sumbit">Submit</button>
+          </form>
+        </div>
+        <div id="clickStatus"></div>
+      </section>
+    </div>
   </div>
 </div>
 <script src="/js/email-support.js"></script>

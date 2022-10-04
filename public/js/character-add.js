@@ -6,6 +6,7 @@ const newCharacterHandler = async (event) => {
   const realm = document.querySelector('#realm-input').value;
 
   if (name && region && realm) {
+<<<<<<< HEAD
     const response = await fetch(`/api/characters`, {
       method: 'POST',
       body: JSON.stringify({
@@ -17,9 +18,21 @@ const newCharacterHandler = async (event) => {
     });
   
     if (response.ok) {
+=======
+    try {
+      await fetch(`/api/characters`, {
+        method: 'POST',
+        body: JSON.stringify({
+          name,
+          region,
+          realm,
+        }),
+        headers: { 'Content-Type': 'application/json' },
+      });
+>>>>>>> b8fc36a9763e7660fc4df8cb78efe6f93192b778
       document.location.reload();
-    } else {
-      alert('No Dice');
+    } catch (err) {
+      console.log(err);
     }
   }
 };

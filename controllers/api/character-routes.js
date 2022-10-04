@@ -64,8 +64,23 @@ router.post('/', async (req, res) => {
       realm: req.body.realm,
       user_id: req.session.user_id,
     });
+    const char = await Character.findOne({
+      where: { name: `${req.body.name}` },
+    });
+    const newTeammate = await Teammates.create({
+      name: capitalizeFirstLetter(req.body.name),
+      role: response.data.active_spec_role,
+      avatar: response.data.thumbnail_url,
+      char_class: response.data.class,
+      spec: response.data.active_spec_name,
+      ilvl: response.data.gear.item_level_equipped,
+      current_m_score: response.data.mythic_plus_scores_by_season[0].scores.all,
+      region: req.body.region,
+      realm: req.body.realm,
+      character_id: char.id,
+    });
 
-    res.status(200).json(newCharacter);
+    res.status(200).json({ newCharacter, newTeammate });
   } catch (err) {
     res.status(420).json(err);
   }
