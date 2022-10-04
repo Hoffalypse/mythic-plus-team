@@ -32,8 +32,6 @@ router.post('/', async (req, res) => {
     const response = await axios.get(
       `https://raider.io/api/v1/characters/profile?region=${req.body.region}&realm=${req.body.realm}&name=${req.body.name}&fields=gear%2Cguild%2Cmythic_plus_scores_by_season%3Acurrent`
     );
-    console.log(response);
-    console.log(response.data.class);
     const newCharacter = await Character.create({
       name: capitalizeFirstLetter(req.body.name),
       role: response.data.active_spec_role,
@@ -46,8 +44,23 @@ router.post('/', async (req, res) => {
       realm: req.body.realm,
       user_id: req.session.user_id,
     });
+    const character = await Character.findOne({
+      where: { name: capitalizeFirstLetter`${req.body.name}` },
+    });
+    const newTeammate = await Teammates.create({
+      name: capitalizeFirstLetter(req.body.name),
+      role: response.data.active_spec_role,
+      avatar: response.data.thumbnail_url,
+      char_class: response.data.class,
+      spec: response.data.active_spec_name,
+      ilvl: response.data.gear.item_level_equipped,
+      current_m_score: response.data.mythic_plus_scores_by_season[0].scores.all,
+      region: req.body.region,
+      realm: req.body.realm,
+      character_id: character.id,
+    });
 
-    res.status(200).json(newCharacter);
+    res.status(200).json({ newCharacter, newTeammate });
   } catch (err) {
     res.status(420).json(err);
   }
