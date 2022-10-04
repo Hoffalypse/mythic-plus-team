@@ -1,6 +1,12 @@
 const router = require('express').Router();
 const  {User, Character}  = require('../../models');
 
+var axios = require("axios").default;
+ const { URLSearchParams } = require('url');
+  const fetch = require('node-fetch');
+const { json } = require("express");
+  const encodedParams = new URLSearchParams();
+
 // ---------------------at api/users----------------------------
 
 // Login
@@ -11,7 +17,9 @@ router.post('/login', async (req, res) => {
           email: req.body.email, 
         },
       });
-      console.log(dbUserData);
+      
+    
+    
       if (!dbUserData) {
         res
           .status(400)
@@ -26,15 +34,43 @@ router.post('/login', async (req, res) => {
           .json({ message: 'Incorrect email or password. Please try again!' });
         return;
       }
-      req.session.save(() => {
-        req.session.loggedIn = true;
-        req.session.user_id = dbUserData.id;
-        req.session.email = dbUserData.email;
-        res
-          .status(200)
+
+      encodedParams.set('user', '1c5b89c284734ba2939ba51b3aae632a');
+      encodedParams.set('password', 's0hdYJNQtM7kEPlS4jLHIRsKURj5im5n');
+      encodedParams.set('grant_type', 'client_credentials');
+      
+      let url = 'https://oauth.battle.net/token';
+      
+      let options = {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+          Authorization: 'Basic MWM1Yjg5YzI4NDczNGJhMjkzOWJhNTFiM2FhZTYzMmE6czBoZFlKTlF0TTdrRVBsUzRqTEhJUnNLVVJqNWltNW4='
+        },
+        body: encodedParams
+      };
+      
+      fetch(url, options)
+        .then(res => res.json())
+        .then(function(data) {
           
-          .json({ user: dbUserData, message: 'You are now logged in!' });  
-      });
+          req.session.save(() => {
+            req.session.token = data;
+            req.session.loggedIn = true;
+            req.session.user_id = dbUserData.id;
+            req.session.email = dbUserData.email;
+            res
+              .status(200)
+              
+              .json({ user: dbUserData, message: 'You are now logged in!' });  
+          });
+
+        })
+        .catch(err => console.error('error:' + err));
+
+
+  
+
     } catch (err) {
       
       res.status(500).json("this was a total failure");

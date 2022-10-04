@@ -18,8 +18,3 @@ mScoreAverage();
  
 
 
-// scoreTotal.push(number)
-
-// console.log(scoreTotal);
-
-// number = document.getElementById("numbers").setAttribute("numbers", "value");
