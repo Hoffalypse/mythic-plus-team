@@ -51,6 +51,10 @@ footer {
   border: 0px;
 }
 
+#btn-support {
+  margin-left: 80px;
+}
+
 .standout {
   color: maroon;
   font-family: 'MedievalSharp', cursive;
@@ -104,6 +108,7 @@ footer {
 #message {
   height: 100px;
   width: 600px;
+  margin-left: 11px;
 }
 
 /* #submit {
@@ -131,7 +136,7 @@ footer {
 }
 
 #email {
-  margin-left: 6px;
+  margin-left: 37px;
 }
 
 /* Styling for character page */
