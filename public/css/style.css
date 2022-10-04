@@ -64,6 +64,11 @@ footer {
   color: white;
   font-family: 'MedievalSharp', cursive;
 }
+
+.standout-3 {
+  color: rebeccapurple;
+  font-family: 'MedievalSharp', cursive;
+}
 /* style for landing page */
 .landing-body {
   margin-top: 106px;
@@ -209,6 +214,12 @@ footer {
   height: 28px;
   width: 28px;
   box-shadow: 5px 10px 18px greenyellow;
+}
+#char-container {
+  background: rgba(0, 0, 0, 0.75);
+  border: solid maroon 3px;
+  border-radius: 10px;
+  padding: 5px;
 }
 
 .char-card {
