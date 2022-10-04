@@ -141,10 +141,15 @@ footer {
 
 /* Styling for character page */
 
-.full{
-  width: 50px;
-  height: 50px;
+.full {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
+.big-img {
+  z-index: 1;
+}
+
 .char-bod {
   margin-top: 106px;
   min-height: calc(100vh - 166px);
@@ -221,6 +226,10 @@ footer {
   width: 600px;
 }
 
+#char-specs {
+  z-index: 3;
+}
+
 ul {
   list-style: none;
   padding-left: 0;
@@ -247,11 +256,11 @@ ul {
 .team-contents {
   display: flex;
 }
-.sizing{
+.sizing {
   font-size: 45px;
   font-weight: bolder;
 }
-.score{
+.score {
   font-weight: bold;
 }
 
@@ -273,13 +282,12 @@ ul {
   box-shadow: 5px 10px 18px greenyellow;
 }
 
-.shields{
-    display: block;
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
+.shields {
+  display: block;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
 }
-
 
 /* styling for login page */
 .extra {
@@ -384,39 +392,40 @@ ul {
   color: maroon;
   text-decoration: underline;
 }
-@media screen and (max-width:1200px){
+@media screen and (max-width: 1200px) {
   #big-logo-img {
     width: 120px;
     height: 120px;
-  };
+  }
 }
 
-@media screen  and (max-width:770px) {
-  .teammate-form-box{
+@media screen and (max-width: 770px) {
+  .teammate-form-box {
     display: block;
     width: 100%;
     height: 100%;
     margin: auto;
   }
-  .team-cont{
+  .team-cont {
     display: block;
-    margin: auto;  
+    margin: auto;
   }
-  .support{
+  .support {
     display: block;
     width: 400px;
-    height:auto;
+    height: auto;
   }
-  .char-bod, .team-body{
+  .char-bod,
+  .team-body {
     overflow: hidden;
-    overflow-X: hidden;
+    overflow-x: hidden;
   }
-  .land-bod{
+  .land-bod {
     overflow: hidden;
-    overflow-X: hidden;
+    overflow-x: hidden;
   }
   .char-form {
-    display:block;
+    display: block;
     width: 100%;
     height: 100%;
     margin: auto;
@@ -427,37 +436,38 @@ ul {
     height: 100%;
     margin: auto;
   }
-  .char-bod{
+  .char-bod {
     background-size: cover;
   }
 }
 
-@media screen  and (max-width:400px) {
-  .teammate-form-box{
+@media screen and (max-width: 400px) {
+  .teammate-form-box {
     display: block;
     width: 100%;
     height: 100%;
     margin: auto;
   }
-  .team-cont{
+  .team-cont {
     display: block;
     margin: auto;
   }
-  .support{
+  .support {
     display: block;
     width: 400px;
-    height:auto;
+    height: auto;
   }
-  .char-bod, .team-body{
+  .char-bod,
+  .team-body {
     overflow: hidden;
-    overflow-X: hidden;
+    overflow-x: hidden;
   }
-  .land-bod{
+  .land-bod {
     overflow: hidden;
-    overflow-X: hidden;
+    overflow-x: hidden;
   }
   .char-form {
-    display:block;
+    display: block;
     width: 100%;
     height: 100%;
     margin: auto;
@@ -468,8 +478,7 @@ ul {
     height: 100%;
     margin: auto;
   }
-  .char-bod{
+  .char-bod {
     background-size: cover;
   }
-
 }
