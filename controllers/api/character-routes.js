@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { json } = require('express');
+const { json, raw } = require('express');
 const { User, Character, Teammates } = require('../../models');
 const withAuth = require('../../utils/auth');
 const { capitalizeFirstLetter } = require('../../utils/helpers');
@@ -24,7 +24,6 @@ router.get('/:id', withAuth, async (req, res) => {
   try {
     const charData = await Character.findByPk(req.params.id, {});
     const char = charData.get({ plain: true });
-    console.log(char);
     res.status(200).json(char);
   } catch (err) {
     res.status(500).json(err);
@@ -48,7 +47,6 @@ router.post('/', async (req, res) => {
       },
     };
     var newRes = await axios(options);
-    console.log(newRes.data.assets[3].value);
 
     const newCharacter = await Character.create({
       name: capitalizeFirstLetter(req.body.name),
@@ -64,22 +62,35 @@ router.post('/', async (req, res) => {
       user_id: req.session.user_id,
     });
 
-    const char = await Character.findOne({
-      where: { name: `${req.body.name}` },
+    const charArr = await Character.findAll({
+      where: { name: `${req.body.name}`, user_id: req.session.user_id },
+      include: { model: Teammates },
+      raw: true,
+      nest: true,
     });
-    const newTeammate = await Teammates.create({
-      name: capitalizeFirstLetter(req.body.name),
-      role: response.data.active_spec_role,
-      avatar: response.data.thumbnail_url,
-      char_class: response.data.class,
-      spec: response.data.active_spec_name,
-      ilvl: response.data.gear.item_level_equipped,
-      current_m_score: response.data.mythic_plus_scores_by_season[0].scores.all,
-      region: req.body.region,
-      realm: req.body.realm,
-      character_id: char.id,
+    console.log(charArr);
+    console.log(charArr[0].teammates.name);
+    charArr.forEach(async (char) => {
+      if (char.teammates.id == null) {
+        await Teammates.create({
+          name: capitalizeFirstLetter(req.body.name),
+          role: response.data.active_spec_role,
+          avatar: response.data.thumbnail_url,
+          char_class: response.data.class,
+          spec: response.data.active_spec_name,
+          ilvl: response.data.gear.item_level_equipped,
+          current_m_score:
+            response.data.mythic_plus_scores_by_season[0].scores.all,
+          region: req.body.region,
+          realm: req.body.realm,
+          character_id: char.id,
+        });
+      } else {
+        return;
+      }
     });
-    res.status(200).json({ newCharacter, newTeammate });
+
+    res.status(200).json({ newCharacter });
   } catch (err) {
     res.status(500).json(err);
     console.log(err);
