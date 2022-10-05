@@ -1,9 +1,9 @@
 const router = require('express').Router();
-const { json, raw } = require('express');
+// const { json, raw } = require('express');
 const { User, Character, Teammates } = require('../../models');
 const withAuth = require('../../utils/auth');
 const { capitalizeFirstLetter } = require('../../utils/helpers');
-const { options } = require('./user-routes');
+// const { options } = require('./user-routes');
 const axios = require('axios').default;
 const slug = require('slug');
 const _ = require('lodash');
