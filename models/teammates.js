@@ -1,9 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-
 class Teammates extends Model {}
-
 
 Teammates.init(
   {
@@ -41,18 +39,18 @@ Teammates.init(
       type: DataTypes.INTEGER,
       allowNull: false,
     },
-    region:{
+    region: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    realm:{
+    realm: {
       type: DataTypes.STRING,
       allowNull: false,
     },
     note: {
       type: DataTypes.TEXT,
       allowNull: true,
-      defaultValue: ""
+      defaultValue: '',
     },
     character_id: {
       type: DataTypes.INTEGER,
@@ -60,7 +58,7 @@ Teammates.init(
         model: 'character',
         key: 'id',
       },
-  },
+    },
   },
   {
     sequelize,
