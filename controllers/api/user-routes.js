@@ -76,8 +76,8 @@ router.post('/signup', async (req, res) => {
       email: req.body.email,
       password: req.body.password,
     });
-    encodedParams.set('user', '1c5b89c284734ba2939ba51b3aae632a');
-    encodedParams.set('password', 's0hdYJNQtM7kEPlS4jLHIRsKURj5im5n');
+    encodedParams.set('user', process.env.BLZD_USER);
+    encodedParams.set('password', process.env.BLZD_PASSWORD);
     encodedParams.set('grant_type', 'client_credentials');
 
     let url = 'https://oauth.battle.net/token';
@@ -105,7 +105,6 @@ router.post('/signup', async (req, res) => {
 
             .json({ user: dbUserData, message: 'You are now logged in!' });
         });
-
       });
   } catch (err) {
     res.status(500).json('You did something wrong ');
