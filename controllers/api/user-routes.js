@@ -1,6 +1,5 @@
 const router = require('express').Router();
 const { User, Character } = require('../../models');
-// const axios = require('axios').default;
 const { URLSearchParams } = require('url');
 const fetch = require('node-fetch');
 
