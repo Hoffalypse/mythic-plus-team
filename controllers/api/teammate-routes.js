@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { default: axios } = require('axios');
-const { User, Character, Teammates } = require('../../models');
+const { Teammates } = require('../../models');
 const withAuth = require('../../utils/auth');
 const { capitalizeFirstLetter } = require('../../utils/helpers');
 

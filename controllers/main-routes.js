@@ -1,6 +1,5 @@
 const router = require('express').Router();
-const sequelize = require('../config/connection');
-const { User, Character, Teammates } = require('../models');
+const { Character, Teammates } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {

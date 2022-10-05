@@ -1,5 +1,3 @@
-
-
 var form = document.getElementById('my-form');
 function handleSubmit(event) {
   event.preventDefault();
