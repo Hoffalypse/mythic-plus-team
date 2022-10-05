@@ -64,8 +64,8 @@ NOTE: Be sure to merge the latest from 'main' before making a pull request!
 ## Links:
 
 <ul>
-<li>Github Link:  https://mythic-plus-team.herokuapp.com/</li>
-<li>Heroku Link:  https://github.com/Hoffalypse/mythic-plus-team</li>
+<li>Github Link:  https://github.com/Hoffalypse/mythic-plus-team</li>
+<li>Heroku Link:  https://mythic-plus-team.herokuapp.com/</li>
 </ul>
 
 ## Creators:
@@ -76,16 +76,3 @@ Bryan Wienhoff: https://github.com/Hoffalypse<br>
 Levi Mendyk: https://github.com/levimendyk<br>
 
 [Video Walkthrough](https://placeholder)
-
-## Wireframe guidelines for this project:
-
-<img src="./assets/images/wireframe-captures/landing-capture.png">
-<br>
-<br>
-<img src="./assets/images/wireframe-captures/login-capture.png">
-<br>
-<br>
-<img src="./assets/images/wireframe-captures/character-capture.png">
-<br>
-<br>
-<img src="./assets/images/wireframe-captures/team-capture.png">
