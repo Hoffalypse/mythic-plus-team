@@ -22,7 +22,7 @@ const addNote = async (event) => {
 };
 
 noteArr = document.querySelectorAll('.new-note');
-console.log(noteArr);
+
 noteArr.forEach((button) => {
   button.addEventListener('click', addNote);
 });

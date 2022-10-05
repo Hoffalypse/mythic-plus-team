@@ -8,9 +8,7 @@ body {
 a:hover {
   cursor: pointer;
 }
-/* button > * {
-  pointer-events: none;
-} */
+
 img:hover {
   cursor: default;
 }

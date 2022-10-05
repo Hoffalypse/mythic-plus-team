@@ -2,7 +2,7 @@ const router = require('express').Router();
 const sequelize = require('../config/connection');
 const { User, Character, Teammates } = require('../models');
 const withAuth = require('../utils/auth');
-// var passport = require('passport-bnet').Strategy;
+
 
 router.get('/', async (req, res) => {
   try {
@@ -22,9 +22,7 @@ router.get('/teams/:id', withAuth, async (req, res) => {
       include: { model: Teammates },
     });
     const team = editTeam.get({ plain: true });
-    // const team = editTeam.map((one) =>
-    // one.get({ plain: true })
-    // );
+    
     console.log(team);
     res.render('teams', { team, loggedIn: true });
   } catch (err) {
