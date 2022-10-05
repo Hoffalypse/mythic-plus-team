@@ -1,10 +1,10 @@
 const router = require('express').Router();
 const { User, Character } = require('../../models');
 
-var axios = require('axios').default;
+const axios = require('axios').default;
 const { URLSearchParams } = require('url');
 const fetch = require('node-fetch');
-const { json } = require('express');
+
 const encodedParams = new URLSearchParams();
 
 // ---------------------at api/users----------------------------
@@ -33,8 +33,8 @@ router.post('/login', async (req, res) => {
       return;
     }
 
-    encodedParams.set('user', '1c5b89c284734ba2939ba51b3aae632a');
-    encodedParams.set('password', 's0hdYJNQtM7kEPlS4jLHIRsKURj5im5n');
+    encodedParams.set('user', process.env.BLZD_USER);
+    encodedParams.set('password', process.env.BLZD_PASSWORD);
     encodedParams.set('grant_type', 'client_credentials');
 
     let url = 'https://oauth.battle.net/token';
@@ -106,12 +106,6 @@ router.post('/signup', async (req, res) => {
             .json({ user: dbUserData, message: 'You are now logged in!' });
         });
 
-        // req.session.save(() => {
-        //   req.session.loggedIn = true;
-        //   req.session.user_id = dbUserData.id;
-        //   req.session.email = dbUserData.email;
-
-        //   res.status(200).json(dbUserData);
       });
   } catch (err) {
     res.status(500).json('You did something wrong ');
