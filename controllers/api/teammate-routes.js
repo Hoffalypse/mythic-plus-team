@@ -6,7 +6,7 @@ const { capitalizeFirstLetter } = require('../../utils/helpers');
 
 //---------------- at api/teammates------------------
 
-router.get('/', (req, res) => {
+router.get('/', withAuth, (req, res) => {
   Teammates.findAll({})
     .then((dbUserData) => res.json(dbUserData))
     .catch((err) => {
@@ -14,7 +14,7 @@ router.get('/', (req, res) => {
     });
 });
 
-router.post('/', async (req, res) => {
+router.post('/', withAuth, async (req, res) => {
   try {
     const response = await axios.get(
       `https://raider.io/api/v1/characters/profile?region=${req.body.region}&realm=${req.body.realm}&name=${req.body.name}&fields=gear%2Cguild%2Cmythic_plus_scores_by_season%3Acurrent`
@@ -56,7 +56,7 @@ router.delete('/:id', withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
-router.put('/', async (req, res) => {
+router.put('/', withAuth, async (req, res) => {
   try {
     const noteData = await Teammates.update(
       {

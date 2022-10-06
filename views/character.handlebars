@@ -428,22 +428,19 @@
         {{#each characters as |character|}}
         {{#if is_active}}
 
+        <div id="char-specs" class="full" style="background-image: url('{{image}}'); ">
+          <ul>
+            <li>Name: {{name}}</li>
+            <li>Role: {{role}}</li>
+            <li>Class: {{char_class}}</li>
+            <li>Spec: {{spec}}</li>
+            <li>Ilvl: {{ilvl}}</li>
+            <li>Current M+ Score: {{current_m_score}}</li>
+          </ul>
+        </div>
 
-        {{!-- <div class="full"><img src="{{image}}" alt="character large picture" class="big-img"> --}}
-          <div id="char-specs" class="full" style="background-image: url('{{image}}'); ">
-            <!--Need to double check the data being inputted in these fields-->
-            <ul>
-              <li>Name: {{name}}</li>
-              <li>Role: {{role}}</li>
-              <li>Class: {{char_class}}</li>
-              <li>Spec: {{spec}}</li>
-              <li>Ilvl: {{ilvl}}</li>
-              <li>Current M+ Score: {{current_m_score}}</li>
-            </ul>
-          </div>
-
-          {{/if}}
-          {{/each}}
+        {{/if}}
+        {{/each}}
 
       </section>
     </main>

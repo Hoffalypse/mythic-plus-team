@@ -8,7 +8,7 @@ const _ = require('lodash');
 
 //--------------at api/characters--------------------------
 
-router.get('/', (req, res) => {
+router.get('/', withAuth, (req, res) => {
   Character.findAll({
     include: { model: Teammates },
   })
@@ -28,7 +28,7 @@ router.get('/:id', withAuth, async (req, res) => {
   }
 });
 
-router.post('/', async (req, res) => {
+router.post('/', withAuth, async (req, res) => {
   try {
     const response = await axios.get(
       `https://raider.io/api/v1/characters/profile?region=${req.body.region}&realm=${req.body.realm}&name=${req.body.name}&fields=gear%2Cguild%2Cmythic_plus_scores_by_season%3Acurrent`

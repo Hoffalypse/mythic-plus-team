@@ -27,6 +27,7 @@ router.get('/teams/:id', withAuth, async (req, res) => {
     res.status(500).json('review update screen error');
   }
 });
+
 router.get('/character', withAuth, (req, res) => {
   Character.findAll({
     where: {
