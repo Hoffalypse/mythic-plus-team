@@ -75,4 +75,6 @@ Matt Peoples: https://github.com/peoplesm<br>
 Bryan Wienhoff: https://github.com/Hoffalypse<br>
 Levi Mendyk: https://github.com/levimendyk<br>
 
-[Video Walkthrough](https://placeholder)
+## Video Walkthrough:
+
+<img src="assets/images/readme-gif/mplusteams.gif"/>
