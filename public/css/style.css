@@ -103,14 +103,14 @@ footer {
 }
 
 .support {
-  width: 1900px;
+  width: 75%;
   background-color: black;
   margin: auto;
 }
 
 #message {
   height: 100px;
-  width: 600px;
+  width: 100%;
   margin-left: 11px;
 }
 
